@@ -1,0 +1,93 @@
+services:
+  liferay:
+    container_name: liferay
+    image: liferay/dxp:2026.q2.1
+    environment:
+      - LIFERAY_JVM_OPTS=-Xms8g -Xmx8g -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9010 -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false
+      - LIFERAY_MODULE_PERIOD_FRAMEWORK_PERIOD_PROPERTIES_PERIOD_OSGI_PERIOD_CONSOLE=0.0.0.0:11311
+    volumes:
+      - ./volumes/liferay-data/data:/opt/liferay/data
+      - ./volumes/liferay-data/deploy:/opt/liferay/deploy
+      - ./volumes/liferay-data/osgi/modules:/opt/liferay/osgi/modules/
+      - ./volumes/liferay-data/osgi/war:/opt/liferay/osgi/war/
+      - ./tools:/opt/liferay/tools
+      - type: bind
+        source: ./config/portal-ext.properties
+        target: /opt/liferay/portal-ext.properties
+      - type: bind
+        source: ./config/com.liferay.portal.search.elasticsearch8.configuration.ElasticsearchConfiguration.config
+        target: /opt/liferay/osgi/configs/com.liferay.portal.search.elasticsearch8.configuration.ElasticsearchConfiguration.config
+      - type: bind
+        source: ./config/com.liferay.frontend.js.jquery.web.internal.configuration.JSJQueryConfiguration.config
+        target: /opt/liferay/osgi/configs/com.liferay.frontend.js.jquery.web.internal.configuration.JSJQueryConfiguration.config
+      - type: bind
+        source: ./config/com.liferay.frontend.theme.font.awesome.web.internal.configuration.CSSFontAwesomeConfiguration.config
+        target: /opt/liferay/osgi/configs/com.liferay.frontend.theme.font.awesome.web.internal.configuration.CSSFontAwesomeConfiguration.config
+      - type: bind
+        source: ./config/com.liferay.portal.template.freemarker.configuration.FreeMarkerEngineConfiguration.config
+        target: /opt/liferay/osgi/configs/com.liferay.portal.template.freemarker.configuration.FreeMarkerEngineConfiguration.config
+      - type: bind
+        source: ./config/com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.config
+        target: /opt/liferay/osgi/configs/com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.config
+      - type: bind
+        source: ./config/com.liferay.portal.html.parser.impl-log4j-ext.xml
+        target: /opt/liferay/osgi/log4j/com.liferay.portal.html.parser.impl-log4j-ext.xml
+    ports:
+      - 8080:8080
+      - 8000:8000
+      - 11311:11311
+    depends_on:
+      database:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_healthy
+    networks:
+      - elerum-net
+
+  database:
+    container_name: database
+    image: mysql:8.0
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./volumes/mysql-data:/var/lib/mysql
+      - type: bind
+        source: ./config/init.sql
+        target: /docker-entrypoint-initdb.d/init.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - 3306:3306
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-ppassword"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - elerum-net
+
+  elasticsearch:
+    container_name: elasticsearch
+    build:
+      context: ./images/elasticsearch/.
+      dockerfile: Dockerfile
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms2g -Xmx2g
+    volumes:
+      - type: bind
+        source: ./config/elasticsearch.yml
+        target: /usr/share/elasticsearch/config/elasticsearch.yml
+    ports:
+      - 9200:9200
+      - 9300:9300
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:9200/_cluster/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - elerum-net
+
+networks:
+  elerum-net:
+    driver: bridge
