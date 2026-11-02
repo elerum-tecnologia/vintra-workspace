@@ -1,0 +1,28 @@
+{
+  "fieldSets": [
+    {
+      "label": "Layout",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "narrow",
+          "label": "Largura do texto",
+          "name": "width",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Leitura (768px)",
+                "value": "narrow"
+              },
+              {
+                "label": "Média (896px)",
+                "value": "medium"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

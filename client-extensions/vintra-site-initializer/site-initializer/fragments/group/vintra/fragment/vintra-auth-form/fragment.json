@@ -1,0 +1,9 @@
+{
+	"configurationPath": "configuration.json",
+	"cssPath": "index.css",
+	"htmlPath": "index.html",
+	"icon": "lock",
+	"jsPath": "index.js",
+	"name": "Vintra - Formulário de acesso",
+	"type": "component"
+}

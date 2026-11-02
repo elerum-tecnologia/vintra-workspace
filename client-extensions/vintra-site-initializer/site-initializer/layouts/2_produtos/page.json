@@ -1,0 +1,11 @@
+{
+  "friendlyURL": "/produtos",
+  "hidden": false,
+  "name": "Produtos",
+  "name_i18n": {
+    "pt_BR": "Produtos"
+  },
+  "private": false,
+  "system": false,
+  "type": "Content"
+}

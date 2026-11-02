@@ -1,0 +1,97 @@
+[#function vtBool value default]
+	[#if value?is_boolean]
+		[#return value]
+	[/#if]
+	[#if value?is_string]
+		[#if value == ""]
+			[#return default]
+		[/#if]
+		[#return value == "true"]
+	[/#if]
+	[#return default]
+[/#function]
+
+[#--
+  Vintra - Cabeçalho
+  Use na Página Mestra. Cada item e subitem do menu é um link editável
+  (texto + destino). A quantidade de itens/subitens fica em Configuração.
+  O mesmo HTML vira o menu móvel (abaixo de 1024px) via CSS/JS.
+--]
+[#assign
+	navDefaults = [
+		{"label": "Produtos", "href": "/produtos", "children": [["Plataforma Vintra", "/produtos/plataforma"], ["Integrações", "/produtos/integracoes"], ["Preços", "/produtos/precos"]]},
+		{"label": "Soluções", "href": "/solucoes", "children": [["Varejo", "/solucoes/varejo"], ["Indústria", "/solucoes/industria"], ["Serviços financeiros", "/solucoes/servicos-financeiros"]]},
+		{"label": "Sobre", "href": "/sobre", "children": [["Nossa história", "/sobre/historia"], ["Equipe", "/sobre/equipe"], ["Carreiras", "/sobre/carreiras"]]},
+		{"label": "Recursos", "href": "/recursos", "children": [["Blog", "/recursos/blog"], ["Central de ajuda", "/recursos/ajuda"], ["Documentação", "/recursos/documentacao"]]},
+		{"label": "Contato", "href": "/contato", "children": []}
+	]
+	menuItems = configuration.menuItems?number
+	navId = "vt-nav-" + fragmentEntryLinkNamespace
+/]
+
+<header class="vt vt-header" data-layout-mode="${layoutMode}" data-sticky="${vtBool(configuration.sticky!"", true)?c}" data-vt-header>
+	<div class="container vt-container vt-header__bar">
+		<a aria-label="Página inicial" class="vt-logo" href="${configuration.homeUrl!"/"}">
+			[#if configuration.logoType == "image"]
+				<img alt="Vintra" class="vt-logo__img" data-lfr-editable-id="logo-image" data-lfr-editable-type="image" src="" />
+			[#else]
+				<span aria-hidden="true" class="vt-logo__mark vt-gradient">
+					<svg fill="none" viewBox="0 0 24 24"><path d="M5 6.5 12 18l7-11.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" /></svg>
+				</span>
+				<span class="vt-logo__name" data-lfr-editable-id="logo-name" data-lfr-editable-type="text">Vintra</span>
+			[/#if]
+		</a>
+
+		<div class="vt-header__menu" id="${navId}">
+			<nav aria-label="Principal" class="vt-header__nav">
+				<ul class="vt-nav">
+					[#list 1..menuItems as i]
+						[#assign
+							item = navDefaults[i - 1]!{}
+							defaultChildren = item.children![]
+							childCount = configuration["item" + i + "Children"]?number
+						/]
+
+						<li class="vt-nav__item[#if childCount gt 0] vt-nav__item--parent[/#if]">
+							<div class="vt-nav__row">
+								<a class="vt-nav__link" data-lfr-editable-id="nav-${i}" data-lfr-editable-type="link" href="${item.href!'#'}">${item.label!"Item ${i}"}</a>
+
+								[#if childCount gt 0]
+									<button aria-expanded="false" aria-label="Abrir submenu" class="vt-nav__toggle" type="button">
+										<svg aria-hidden="true" class="vt-icon"><use href="#vt-i-chevron-down" /></svg>
+									</button>
+								[/#if]
+							</div>
+
+							[#if childCount gt 0]
+								<div class="vt-nav__dropdown">
+									<ul class="vt-nav__panel">
+										[#list 1..childCount as j]
+											[#assign child = (j lte defaultChildren?size)?then(defaultChildren[j - 1], ["Subitem ${j}", "#"]) /]
+
+											<li>
+												<a class="vt-nav__sublink" data-lfr-editable-id="nav-${i}-${j}" data-lfr-editable-type="link" href="${child[1]}">${child[0]}</a>
+											</li>
+										[/#list]
+									</ul>
+								</div>
+							[/#if]
+						</li>
+					[/#list]
+				</ul>
+			</nav>
+
+			[#if vtBool(configuration.showActions!"", true)]
+				<div class="vt-header__actions">
+					<a class="vt-btn vt-btn--ghost vt-btn--sm vt-header__login" data-lfr-editable-id="login" data-lfr-editable-type="link" href="/entrar">Entrar</a>
+					<a class="vt-btn vt-btn--primary vt-btn--sm vt-header__signup" data-lfr-editable-id="signup" data-lfr-editable-type="link" href="/criar-conta">Criar conta</a>
+				</div>
+			[/#if]
+		</div>
+
+		<button aria-controls="${navId}" aria-expanded="false" aria-label="Abrir menu" class="vt-header__burger" type="button">
+			<svg aria-hidden="true" class="vt-icon vt-header__icon-open"><use href="#vt-i-menu" /></svg>
+			<svg aria-hidden="true" class="vt-icon vt-header__icon-close"><use href="#vt-i-x" /></svg>
+		</button>
+	</div>
+</header>

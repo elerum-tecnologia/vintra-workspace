@@ -1,0 +1,21 @@
+{
+  "fieldSets": [
+    {
+      "label": "Conteúdo",
+      "fields": [
+        {
+          "defaultValue": true,
+          "label": "Mostrar categoria",
+          "name": "showCategory",
+          "type": "checkbox"
+        },
+        {
+          "defaultValue": true,
+          "label": "Mostrar resumo",
+          "name": "showExcerpt",
+          "type": "checkbox"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "fieldSets": [
+    {
+      "label": "Tema",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "light",
+          "label": "Modo de cor",
+          "name": "theme",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Claro",
+                "value": "light"
+              },
+              {
+                "label": "Escuro",
+                "value": "dark"
+              },
+              {
+                "label": "Automático (segue o sistema do visitante)",
+                "value": "auto"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "#6366f1",
+          "description": "Cor primária e início do gradiente da marca (modo claro).",
+          "label": "Cor da marca (início)",
+          "name": "brandFrom",
+          "type": "colorPicker"
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "#8b5cf6",
+          "description": "Fim do gradiente da marca e cor de foco (modo claro).",
+          "label": "Cor da marca (fim)",
+          "name": "brandTo",
+          "type": "colorPicker"
+        }
+      ]
+    }
+  ]
+}

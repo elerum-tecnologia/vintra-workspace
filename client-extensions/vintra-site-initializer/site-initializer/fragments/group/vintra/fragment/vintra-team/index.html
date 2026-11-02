@@ -1,0 +1,58 @@
+[#function vtBool value default]
+	[#if value?is_boolean]
+		[#return value]
+	[/#if]
+	[#if value?is_string]
+		[#if value == ""]
+			[#return default]
+		[/#if]
+		[#return value == "true"]
+	[/#if]
+	[#return default]
+[/#function]
+
+[#--
+  Vintra - Equipe
+  Foto, nome e cargo editáveis. Quantidade de pessoas em Configuração.
+--]
+[#assign
+	defaults = [
+		["Marina Ferraz", "Diretora-executiva (CEO)", "[resources:team-marina.jpg]"],
+		["Bruno Salgado", "Diretor de tecnologia (CTO)", "[resources:team-bruno.jpg]"],
+		["Camila Duarte", "Head de Produto", "[resources:team-camila.jpg]"],
+		["Rafael Nogueira", "Head de Vendas", "[resources:team-rafael.jpg]"]
+	]
+	items = configuration.items?number
+/]
+
+<section class="vt vt-section vt-team vt-bg--${configuration.background!"default"}">
+	<div class="container vt-container">
+		<div class="vt-section-head">
+			[#if vtBool(configuration.showEyebrow!"", true)]
+				<span class="vt-eyebrow" data-lfr-editable-id="eyebrow" data-lfr-editable-type="text">Liderança</span>
+			[/#if]
+
+			<h2 class="vt-h2" data-lfr-editable-id="title" data-lfr-editable-type="text">Quem lidera a Vintra</h2>
+
+			[#if vtBool(configuration.showIntro!"", true)]
+				<p class="vt-lead" data-lfr-editable-id="intro" data-lfr-editable-type="text">Um time com experiência em produto, engenharia e operação, próximo de cada cliente.</p>
+			[/#if]
+		</div>
+
+		<div class="vt-team__grid">
+			[#list 1..items as i]
+				[#assign member = (i lte defaults?size)?then(defaults[i - 1], ["Nome da pessoa", "Cargo", ""]) /]
+
+				<div class="vt-team__member">
+					<div class="vt-team__photo">
+						<img alt="Retrato de ${member[0]}" data-lfr-editable-id="member-${i}-image" data-lfr-editable-type="image" src="${member[2]}" />
+					</div>
+
+					<h3 class="vt-team__name" data-lfr-editable-id="member-${i}-name" data-lfr-editable-type="text">${member[0]}</h3>
+
+					<p class="vt-team__role" data-lfr-editable-id="member-${i}-role" data-lfr-editable-type="text">${member[1]}</p>
+				</div>
+			[/#list]
+		</div>
+	</div>
+</section>

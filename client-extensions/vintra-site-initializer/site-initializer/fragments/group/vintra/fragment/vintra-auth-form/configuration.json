@@ -1,0 +1,142 @@
+{
+  "fieldSets": [
+    {
+      "label": "Campos",
+      "fields": [
+        {
+          "defaultValue": false,
+          "label": "Campo: Nome completo",
+          "name": "showName",
+          "type": "checkbox"
+        },
+        {
+          "defaultValue": false,
+          "label": "Campo: Empresa",
+          "name": "showCompany",
+          "type": "checkbox"
+        },
+        {
+          "defaultValue": true,
+          "label": "Campo: E-mail",
+          "name": "showEmail",
+          "type": "checkbox"
+        },
+        {
+          "defaultValue": true,
+          "label": "Campo: Senha",
+          "name": "showPassword",
+          "type": "checkbox"
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "current-password",
+          "label": "Tipo de senha",
+          "name": "passwordMode",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Senha atual (login)",
+                "value": "current-password"
+              },
+              {
+                "label": "Nova senha (cadastro)",
+                "value": "new-password"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "Placeholders",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "Seu nome",
+          "label": "Placeholder do nome",
+          "name": "placeholderName",
+          "type": "text"
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "Nome da empresa",
+          "label": "Placeholder da empresa",
+          "name": "placeholderCompany",
+          "type": "text"
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "voce@empresa.com.br",
+          "label": "Placeholder do e-mail",
+          "name": "placeholderEmail",
+          "type": "text"
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "••••••••",
+          "label": "Placeholder da senha",
+          "name": "placeholderPassword",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "label": "Rodapé do card",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "2",
+          "label": "Quantidade de links abaixo do formulário",
+          "name": "footerLinks",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "0",
+                "value": "0"
+              },
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "Marca",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "/",
+          "label": "Link do logo",
+          "name": "homeUrl",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "label": "Envio do formulário",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "",
+          "description": "Vazio = modo demonstração. Os campos são enviados em JSON (name, company, email, password) com o token CSRF do Liferay. Para login real, prefira o widget de login do Liferay.",
+          "label": "Endpoint de envio (opcional)",
+          "name": "endpoint",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}

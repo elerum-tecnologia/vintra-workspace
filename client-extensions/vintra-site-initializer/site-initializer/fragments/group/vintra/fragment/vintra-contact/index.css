@@ -1,0 +1,132 @@
+/* Vintra - Contato */
+.vt .vt-contact__grid {
+	display: grid;
+	gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+	.vt .vt-contact__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+.vt .vt-contact__title {
+	margin-top: 0.5rem;
+}
+
+.vt .vt-contact__description {
+	margin-top: 1rem;
+}
+
+.vt .vt-contact__details {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+	margin-top: 2rem;
+}
+
+.vt .vt-contact__detail {
+	align-items: flex-start;
+	display: flex;
+	gap: 1rem;
+}
+
+.vt .vt-contact__icon {
+	align-items: center;
+	background-color: var(--vt-accent);
+	border-radius: var(--vt-radius-xl);
+	color: var(--vt-accent-foreground);
+	display: inline-flex;
+	flex-shrink: 0;
+	height: 2.75rem;
+	justify-content: center;
+	width: 2.75rem;
+}
+
+.vt .vt-contact__icon .vt-icon {
+	height: 1.25rem;
+	width: 1.25rem;
+}
+
+.vt .vt-contact__label {
+	color: var(--vt-muted-foreground);
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: 1.25rem;
+}
+
+.vt .vt-contact__value,
+.vt a.vt-contact__value:focus {
+	color: var(--vt-foreground);
+	display: inline-block;
+	font-size: 1.125rem;
+	font-weight: 500;
+	line-height: 1.75rem;
+	text-decoration: none;
+}
+
+.vt a.vt-contact__value:hover {
+	color: var(--vt-primary);
+	text-decoration: none;
+}
+
+.vt .vt-contact__card {
+	background-color: var(--vt-card);
+	border: 1px solid var(--vt-border);
+	border-radius: var(--vt-radius-2xl);
+	box-shadow: var(--vt-shadow-sm);
+	padding: 1.5rem;
+}
+
+@media (min-width: 640px) {
+	.vt .vt-contact__card {
+		padding: 2rem;
+	}
+}
+
+.vt .vt-contact__submit {
+	margin-top: 1.25rem;
+}
+
+.vt .vt-contact__success {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 3rem 0;
+	text-align: center;
+}
+
+.vt .vt-contact__success[hidden],
+.vt .vt-contact__form[hidden],
+.vt .vt-form-error[hidden] {
+	display: none;
+}
+
+.vt .vt-contact__form + .vt-contact__success {
+	border-top: 1px dashed var(--vt-border);
+	margin-top: 2rem;
+}
+
+.vt .vt-contact__form[hidden] + .vt-contact__success {
+	border-top: 0;
+	margin-top: 0;
+}
+
+.vt .vt-contact__success-title {
+	color: var(--vt-foreground);
+	font-size: 1.25rem;
+	font-weight: 600;
+	line-height: 1.75rem;
+	margin-top: 1.25rem;
+}
+
+.vt .vt-contact__success-text {
+	color: var(--vt-muted-foreground);
+	margin-top: 0.5rem;
+	max-width: 24rem;
+}
+
+.vt .vt-contact__again {
+	margin-top: 1.5rem;
+}

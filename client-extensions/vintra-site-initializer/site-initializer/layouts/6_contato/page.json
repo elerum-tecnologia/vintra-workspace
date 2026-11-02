@@ -1,0 +1,11 @@
+{
+  "friendlyURL": "/contato",
+  "hidden": false,
+  "name": "Contato",
+  "name_i18n": {
+    "pt_BR": "Contato"
+  },
+  "private": false,
+  "system": false,
+  "type": "Content"
+}

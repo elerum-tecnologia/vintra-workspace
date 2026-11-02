@@ -1,0 +1,14 @@
+vintra-site-initializer:
+  name: Vintra Site Initializer
+  oAuthApplicationHeadlessServer: vintra-site-initializer-oauth-application-headless-server
+  siteExternalReferenceCode: vintra
+  siteName: Vintra
+  type: siteInitializer
+
+vintra-site-initializer-oauth-application-headless-server:
+  .serviceAddress: localhost:8080
+  .serviceScheme: http
+  name: Vintra Site OAuth Application Headless Server
+  scopes:
+    - Liferay.Headless.Site.everything
+  type: oAuthApplicationHeadlessServer

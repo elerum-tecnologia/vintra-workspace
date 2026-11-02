@@ -1,0 +1,110 @@
+[#function vtBool value default]
+	[#if value?is_boolean]
+		[#return value]
+	[/#if]
+	[#if value?is_string]
+		[#if value == ""]
+			[#return default]
+		[/#if]
+		[#return value == "true"]
+	[/#if]
+	[#return default]
+[/#function]
+
+[#--
+  Vintra - Formulário de acesso
+  Um fragmento para as páginas Entrar / Criar conta / Esqueci a senha:
+  escolha os campos em Configuração e edite título, rótulos, botão,
+  mensagem de sucesso e links do rodapé.
+    - Entrar:        E-mail + Senha (senha atual), 2 links
+    - Criar conta:   Nome + Empresa + E-mail + Senha (nova senha), 1 link
+    - Esqueci senha: só E-mail, 1 link
+--]
+[#assign
+	ns = fragmentEntryLinkNamespace
+	isEditMode = layoutMode == "edit"
+	footerLinks = configuration.footerLinks?number
+	linkDefaults = [
+		["Esqueceu a senha?", "Recuperar acesso", "/esqueci-senha"],
+		["Ainda não tem conta?", "Criar conta", "/criar-conta"],
+		["Precisa de ajuda?", "Fale com a gente", "/contato"]
+	]
+/]
+
+<section class="vt vt-auth" data-vt-auth>
+	<div aria-hidden="true" class="vt-glow vt-auth__glow"></div>
+
+	<div class="vt-auth__card">
+		<div class="vt-auth__head">
+			<a aria-label="Página inicial" class="vt-logo" href="${configuration.homeUrl!"/"}">
+				<span aria-hidden="true" class="vt-logo__mark vt-gradient">
+					<svg fill="none" viewBox="0 0 24 24"><path d="M5 6.5 12 18l7-11.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" /></svg>
+				</span>
+				<span class="vt-logo__name" data-lfr-editable-id="logo-name" data-lfr-editable-type="text">Vintra</span>
+			</a>
+
+			<h1 class="vt-auth__title" data-lfr-editable-id="title" data-lfr-editable-type="text">Entrar na Vintra</h1>
+
+			<p class="vt-auth__description" data-lfr-editable-id="description" data-lfr-editable-type="text">Acesse o painel da sua operação.</p>
+		</div>
+
+		<form class="vt-auth__form" data-endpoint="${configuration.endpoint!""}" data-layout-mode="${layoutMode}" novalidate>
+			[#if vtBool(configuration.showName!"", false)]
+				<div class="vt-field">
+					<label class="vt-label" for="${ns}-name" data-lfr-editable-id="label-name" data-lfr-editable-type="text">Nome completo</label>
+					<input autocomplete="name" class="vt-input" id="${ns}-name" name="name" placeholder="${configuration.placeholderName!"Seu nome"}" required type="text" />
+				</div>
+			[/#if]
+
+			[#if vtBool(configuration.showCompany!"", false)]
+				<div class="vt-field">
+					<label class="vt-label" for="${ns}-company" data-lfr-editable-id="label-company" data-lfr-editable-type="text">Empresa</label>
+					<input autocomplete="organization" class="vt-input" id="${ns}-company" name="company" placeholder="${configuration.placeholderCompany!"Nome da empresa"}" required type="text" />
+				</div>
+			[/#if]
+
+			[#if vtBool(configuration.showEmail!"", true)]
+				<div class="vt-field">
+					<label class="vt-label" for="${ns}-email" data-lfr-editable-id="label-email" data-lfr-editable-type="text">E-mail</label>
+					<input autocomplete="email" class="vt-input" id="${ns}-email" name="email" placeholder="${configuration.placeholderEmail!"voce@empresa.com.br"}" required type="email" />
+				</div>
+			[/#if]
+
+			[#if vtBool(configuration.showPassword!"", true)]
+				<div class="vt-field">
+					<label class="vt-label" for="${ns}-password" data-lfr-editable-id="label-password" data-lfr-editable-type="text">Senha</label>
+					<input autocomplete="${configuration.passwordMode!"current-password"}" class="vt-input" id="${ns}-password" name="password" placeholder="${configuration.placeholderPassword!""}" required type="password" />
+				</div>
+			[/#if]
+
+			<button class="vt-btn vt-btn--primary vt-btn--lg vt-btn--block vt-auth__submit" type="${isEditMode?then("button", "submit")}">
+				<span data-lfr-editable-id="submit" data-lfr-editable-type="text">Entrar</span>
+			</button>
+
+			<p class="vt-form-error" data-lfr-editable-id="error" data-lfr-editable-type="text" [#if !isEditMode]hidden[/#if]>Não foi possível concluir agora. Tente novamente em instantes.</p>
+		</form>
+
+		<div class="vt-auth__success" [#if !isEditMode]hidden[/#if]>
+			[#if isEditMode]
+				<span class="vt-editor-label">Mensagem de sucesso (visível após o envio)</span>
+			[/#if]
+
+			<span class="vt-success-badge vt-auth__badge"><svg aria-hidden="true" class="vt-icon"><use href="#vt-i-check" /></svg></span>
+
+			<p class="vt-auth__success-text" data-lfr-editable-id="success" data-lfr-editable-type="text">Login enviado! Em uma aplicação real, você seria redirecionado ao painel.</p>
+		</div>
+
+		[#if footerLinks gt 0]
+			<div class="vt-auth__footer">
+				[#list 1..footerLinks as i]
+					[#assign link = linkDefaults[i - 1] /]
+
+					<p>
+						<span data-lfr-editable-id="footer-${i}-prefix" data-lfr-editable-type="text">${link[0]}</span>
+						<a class="vt-auth__link" data-lfr-editable-id="footer-${i}-link" data-lfr-editable-type="link" href="${link[2]}">${link[1]}</a>
+					</p>
+				[/#list]
+			</div>
+		[/#if]
+	</div>
+</section>

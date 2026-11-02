@@ -1,0 +1,377 @@
+{
+  "fieldSets": [
+    {
+      "label": "Marca",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "mark",
+          "label": "Tipo de logo",
+          "name": "logoType",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Símbolo Vintra + nome",
+                "value": "mark"
+              },
+              {
+                "label": "Imagem (editável)",
+                "value": "image"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "/",
+          "description": "Endereço da página inicial do site.",
+          "label": "Link do logo",
+          "name": "homeUrl",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "label": "Menu",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "5",
+          "label": "Quantidade de itens no menu",
+          "name": "menuItems",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              },
+              {
+                "label": "5",
+                "value": "5"
+              },
+              {
+                "label": "6",
+                "value": "6"
+              },
+              {
+                "label": "7",
+                "value": "7"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "3",
+          "description": "0 = link simples, sem submenu.",
+          "label": "Subitens do item 1",
+          "name": "item1Children",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "0",
+                "value": "0"
+              },
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              },
+              {
+                "label": "5",
+                "value": "5"
+              },
+              {
+                "label": "6",
+                "value": "6"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "3",
+          "description": "0 = link simples, sem submenu.",
+          "label": "Subitens do item 2",
+          "name": "item2Children",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "0",
+                "value": "0"
+              },
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              },
+              {
+                "label": "5",
+                "value": "5"
+              },
+              {
+                "label": "6",
+                "value": "6"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "3",
+          "description": "0 = link simples, sem submenu.",
+          "label": "Subitens do item 3",
+          "name": "item3Children",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "0",
+                "value": "0"
+              },
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              },
+              {
+                "label": "5",
+                "value": "5"
+              },
+              {
+                "label": "6",
+                "value": "6"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "3",
+          "description": "0 = link simples, sem submenu.",
+          "label": "Subitens do item 4",
+          "name": "item4Children",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "0",
+                "value": "0"
+              },
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              },
+              {
+                "label": "5",
+                "value": "5"
+              },
+              {
+                "label": "6",
+                "value": "6"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "0",
+          "description": "0 = link simples, sem submenu.",
+          "label": "Subitens do item 5",
+          "name": "item5Children",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "0",
+                "value": "0"
+              },
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              },
+              {
+                "label": "5",
+                "value": "5"
+              },
+              {
+                "label": "6",
+                "value": "6"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "0",
+          "description": "0 = link simples, sem submenu.",
+          "label": "Subitens do item 6",
+          "name": "item6Children",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "0",
+                "value": "0"
+              },
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              },
+              {
+                "label": "5",
+                "value": "5"
+              },
+              {
+                "label": "6",
+                "value": "6"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "0",
+          "description": "0 = link simples, sem submenu.",
+          "label": "Subitens do item 7",
+          "name": "item7Children",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "0",
+                "value": "0"
+              },
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              },
+              {
+                "label": "5",
+                "value": "5"
+              },
+              {
+                "label": "6",
+                "value": "6"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "Comportamento",
+      "fields": [
+        {
+          "defaultValue": true,
+          "label": "Mostrar botões Entrar / Criar conta",
+          "name": "showActions",
+          "type": "checkbox"
+        },
+        {
+          "defaultValue": true,
+          "label": "Fixar no topo ao rolar a página",
+          "name": "sticky",
+          "type": "checkbox"
+        }
+      ]
+    }
+  ]
+}

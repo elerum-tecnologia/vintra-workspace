@@ -1,0 +1,39 @@
+{
+  "fieldSets": [
+    {
+      "label": "Conteúdo",
+      "fields": [
+        {
+          "defaultValue": true,
+          "label": "Mostrar link de voltar",
+          "name": "showBackLink",
+          "type": "checkbox"
+        },
+        {
+          "defaultValue": true,
+          "label": "Mostrar resumo",
+          "name": "showExcerpt",
+          "type": "checkbox"
+        },
+        {
+          "defaultValue": true,
+          "label": "Mostrar autor",
+          "name": "showAuthor",
+          "type": "checkbox"
+        },
+        {
+          "defaultValue": true,
+          "label": "Mostrar data e tempo de leitura",
+          "name": "showMeta",
+          "type": "checkbox"
+        },
+        {
+          "defaultValue": true,
+          "label": "Mostrar imagem de capa",
+          "name": "showCover",
+          "type": "checkbox"
+        }
+      ]
+    }
+  ]
+}

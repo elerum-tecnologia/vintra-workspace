@@ -1,0 +1,9 @@
+{
+	"configurationPath": "configuration.json",
+	"cssPath": "index.css",
+	"htmlPath": "index.html",
+	"icon": "megaphone",
+	"jsPath": "index.js",
+	"name": "Vintra - Chamada para ação",
+	"type": "component"
+}

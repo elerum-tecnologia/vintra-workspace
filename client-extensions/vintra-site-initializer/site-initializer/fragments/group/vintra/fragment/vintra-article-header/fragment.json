@@ -1,0 +1,9 @@
+{
+	"configurationPath": "configuration.json",
+	"cssPath": "index.css",
+	"htmlPath": "index.html",
+	"icon": "document-text",
+	"jsPath": "index.js",
+	"name": "Vintra - Cabeçalho de artigo",
+	"type": "component"
+}

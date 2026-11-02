@@ -1,0 +1,11 @@
+{
+  "friendlyURL": "/solucoes/servicos-financeiros",
+  "hidden": false,
+  "name": "Serviços financeiros",
+  "name_i18n": {
+    "pt_BR": "Serviços financeiros"
+  },
+  "private": false,
+  "system": false,
+  "type": "Content"
+}

@@ -1,0 +1,9 @@
+{
+	"configurationPath": "configuration.json",
+	"cssPath": "index.css",
+	"htmlPath": "index.html",
+	"icon": "users",
+	"jsPath": "index.js",
+	"name": "Vintra - Equipe",
+	"type": "component"
+}

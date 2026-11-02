@@ -1,0 +1,55 @@
+/* Vintra - Equipe */
+.vt .vt-team__grid {
+	display: grid;
+	gap: 2rem;
+	margin-top: 3.5rem;
+}
+
+@media (min-width: 640px) {
+	.vt .vt-team__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 1024px) {
+	.vt .vt-team__grid {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+}
+
+.vt .vt-team__member {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.vt .vt-team__photo {
+	background-color: var(--vt-muted);
+	border-radius: 9999px;
+	box-shadow: 0 0 0 4px var(--vt-accent);
+	height: 8rem;
+	overflow: hidden;
+	width: 8rem;
+}
+
+.vt .vt-team__photo img {
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+.vt .vt-team__name {
+	color: var(--vt-foreground);
+	font-size: 1.125rem;
+	font-weight: 600;
+	line-height: 1.75rem;
+	margin-top: 1.25rem;
+}
+
+.vt .vt-team__role {
+	color: var(--vt-muted-foreground);
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	margin-top: 0.25rem;
+}

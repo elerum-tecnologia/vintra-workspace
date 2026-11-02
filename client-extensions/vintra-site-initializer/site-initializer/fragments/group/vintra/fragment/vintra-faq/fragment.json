@@ -1,0 +1,9 @@
+{
+	"configurationPath": "configuration.json",
+	"cssPath": "index.css",
+	"htmlPath": "index.html",
+	"icon": "question-circle",
+	"jsPath": "index.js",
+	"name": "Vintra - Perguntas frequentes",
+	"type": "component"
+}

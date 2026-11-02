@@ -1,0 +1,587 @@
+/* ==========================================================================
+   Vintra - Base (estilos globais)
+   Tokens e primitivos compartilhados por todos os fragmentos "Vintra - *".
+   Convenção: todo fragmento tem a classe raiz ".vt" e as regras de
+   componente usam ".vt .vt-*" para vencer os estilos do tema/Clay.
+   ========================================================================== */
+
+/* ---------- Tokens (modo claro) ---------- */
+:root {
+	--vt-background: #ffffff;
+	--vt-foreground: #111827;
+	--vt-card: #ffffff;
+	--vt-card-foreground: #111827;
+	--vt-popover: #ffffff;
+	--vt-primary: #6366f1;
+	--vt-primary-foreground: #ffffff;
+	--vt-muted: #f9fafb;
+	--vt-muted-foreground: #6b7280;
+	--vt-accent: #ede9fe;
+	--vt-accent-foreground: #4338ca;
+	--vt-destructive: #ef4444;
+	--vt-border: #e5e7eb;
+	--vt-input: #e5e7eb;
+	--vt-ring: #8b5cf6;
+	--vt-brand-from: #6366f1;
+	--vt-brand-to: #8b5cf6;
+	--vt-footer-bg: #111827;
+
+	--vt-radius: 0.75rem;
+	--vt-radius-md: 0.6rem;
+	--vt-radius-xl: 1.05rem;
+	--vt-radius-2xl: 1.35rem;
+	--vt-radius-3xl: 1.65rem;
+
+	--vt-font-sans: 'Work Sans', ui-sans-serif, system-ui, sans-serif;
+	--vt-font-display: 'Sora', ui-sans-serif, system-ui, sans-serif;
+	--vt-font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+	--vt-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+	--vt-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+	--vt-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+	--vt-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+	--vt-gradient: linear-gradient(to right, var(--vt-brand-from), var(--vt-brand-to));
+
+	/* Ícones usados como máscara em CSS (para conteúdo editável) */
+	--vt-icon-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+	--vt-icon-arrow-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m12 5 7 7-7 7'/%3E%3C/svg%3E");
+	--vt-icon-arrow-left: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 19-7-7 7-7'/%3E%3Cpath d='M19 12H5'/%3E%3C/svg%3E");
+}
+
+/* ---------- Tokens (modo escuro) ---------- */
+html:has(.vt-theme--dark) {
+	color-scheme: dark;
+	--vt-background: #0a0a0f;
+	--vt-foreground: #f9fafb;
+	--vt-card: #14141c;
+	--vt-card-foreground: #f9fafb;
+	--vt-popover: #14141c;
+	--vt-primary: #818cf8;
+	--vt-primary-foreground: #0a0a0f;
+	--vt-muted: #16161f;
+	--vt-muted-foreground: #9ca3af;
+	--vt-accent: #1e1b34;
+	--vt-accent-foreground: #c7d2fe;
+	--vt-destructive: #f87171;
+	--vt-border: rgba(255, 255, 255, 0.1);
+	--vt-input: rgba(255, 255, 255, 0.14);
+	--vt-ring: #8b5cf6;
+	--vt-brand-from: #818cf8;
+	--vt-brand-to: #a78bfa;
+}
+
+@media (prefers-color-scheme: dark) {
+	html:has(.vt-theme--auto) {
+		color-scheme: dark;
+		--vt-background: #0a0a0f;
+		--vt-foreground: #f9fafb;
+		--vt-card: #14141c;
+		--vt-card-foreground: #f9fafb;
+		--vt-popover: #14141c;
+		--vt-primary: #818cf8;
+		--vt-primary-foreground: #0a0a0f;
+		--vt-muted: #16161f;
+		--vt-muted-foreground: #9ca3af;
+		--vt-accent: #1e1b34;
+		--vt-accent-foreground: #c7d2fe;
+		--vt-destructive: #f87171;
+		--vt-border: rgba(255, 255, 255, 0.1);
+		--vt-input: rgba(255, 255, 255, 0.14);
+		--vt-ring: #8b5cf6;
+		--vt-brand-from: #818cf8;
+		--vt-brand-to: #a78bfa;
+	}
+}
+
+html:has(.vt-theme) body {
+	background-color: var(--vt-background);
+}
+
+/* ---------- Fragmento base ---------- */
+.vt-sprite {
+	height: 0;
+	overflow: hidden;
+	position: absolute;
+	width: 0;
+}
+
+.vt-theme__notice {
+	border: 1px dashed var(--vt-border);
+	border-radius: var(--vt-radius);
+	color: var(--vt-muted-foreground);
+	font-family: var(--vt-font-mono);
+	font-size: 0.75rem;
+	margin: 0.5rem;
+	padding: 0.5rem 0.75rem;
+}
+
+/* ---------- Reset escopado ---------- */
+.vt {
+	-webkit-font-smoothing: antialiased;
+	color: var(--vt-foreground);
+	font-family: var(--vt-font-sans);
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+.vt *,
+.vt *::before,
+.vt *::after {
+	box-sizing: border-box;
+}
+
+.vt :where(h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, figure) {
+	margin: 0;
+}
+
+.vt :where(h1, h2, h3, h4) {
+	color: inherit;
+	font-family: var(--vt-font-display);
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+}
+
+.vt :where(ul, ol) {
+	list-style: none;
+	padding: 0;
+}
+
+.vt :where(img) {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+.vt :where(a) {
+	color: inherit;
+	text-decoration: none;
+}
+
+.vt :where(a):hover,
+.vt :where(a):focus {
+	color: inherit;
+	text-decoration: none;
+}
+
+.vt :where(button) {
+	background: none;
+	border: 0;
+	color: inherit;
+	cursor: pointer;
+	font: inherit;
+	padding: 0;
+}
+
+.vt .vt-icon {
+	fill: none;
+	flex-shrink: 0;
+	height: 1rem;
+	stroke: currentColor;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 2;
+	width: 1rem;
+}
+
+/* ---------- Layout ---------- */
+.vt .vt-container {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 72rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	width: 100%;
+}
+
+.vt .vt-container--narrow {
+	max-width: 48rem;
+}
+
+.vt .vt-container--medium {
+	max-width: 56rem;
+}
+
+@media (min-width: 640px) {
+	.vt .vt-container {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.vt .vt-container {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
+
+.vt.vt-section {
+	padding-bottom: 4rem;
+	padding-top: 4rem;
+}
+
+@media (min-width: 640px) {
+	.vt.vt-section {
+		padding-bottom: 6rem;
+		padding-top: 6rem;
+	}
+}
+
+.vt.vt-bg--muted {
+	background-color: var(--vt-muted);
+}
+
+/* ---------- Tipografia compartilhada ---------- */
+.vt .vt-eyebrow {
+	color: var(--vt-primary);
+	display: inline-block;
+	font-family: var(--vt-font-mono);
+	font-size: 0.75rem;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	line-height: 1rem;
+	text-transform: uppercase;
+}
+
+.vt .vt-h2 {
+	color: var(--vt-foreground);
+	font-family: var(--vt-font-display);
+	font-size: 1.875rem;
+	font-weight: 700;
+	letter-spacing: -0.025em;
+	line-height: 2.25rem;
+	text-wrap: balance;
+}
+
+@media (min-width: 640px) {
+	.vt .vt-h2 {
+		font-size: 2.25rem;
+		line-height: 2.5rem;
+	}
+}
+
+.vt .vt-lead {
+	color: var(--vt-muted-foreground);
+	font-size: 1.125rem;
+	line-height: 1.625;
+	text-wrap: pretty;
+}
+
+.vt .vt-section-head {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 42rem;
+	text-align: center;
+}
+
+.vt .vt-section-head .vt-h2 {
+	margin-top: 0.5rem;
+}
+
+.vt .vt-section-head .vt-lead {
+	margin-top: 1rem;
+}
+
+.vt .vt-gradient {
+	background-image: var(--vt-gradient);
+}
+
+.vt .vt-text-gradient {
+	-webkit-background-clip: text;
+	background-clip: text;
+	background-image: var(--vt-gradient);
+	color: transparent;
+}
+
+/* ---------- Glow decorativo (hero, artigo, login) ---------- */
+.vt .vt-glow {
+	inset: 0;
+	pointer-events: none;
+	position: absolute;
+	z-index: -1;
+}
+
+.vt .vt-glow::before,
+.vt .vt-glow::after {
+	border-radius: 9999px;
+	content: '';
+	filter: blur(64px);
+	height: 24rem;
+	position: absolute;
+	width: 24rem;
+}
+
+.vt .vt-glow::before {
+	background-color: color-mix(in srgb, var(--vt-brand-from) 15%, transparent);
+	left: -6rem;
+	top: -6rem;
+}
+
+.vt .vt-glow::after {
+	background-color: color-mix(in srgb, var(--vt-brand-to) 15%, transparent);
+	right: -6rem;
+	top: 2.5rem;
+}
+
+/* ---------- Botões ---------- */
+.vt .vt-btn {
+	align-items: center;
+	border: 1px solid transparent;
+	border-radius: var(--vt-radius);
+	cursor: pointer;
+	display: inline-flex;
+	font-family: var(--vt-font-sans);
+	font-size: 0.875rem;
+	font-weight: 500;
+	gap: 0.5rem;
+	height: 2.75rem;
+	justify-content: center;
+	line-height: 1.25rem;
+	outline: none;
+	padding: 0 1.25rem;
+	text-decoration: none;
+	transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	white-space: nowrap;
+}
+
+.vt .vt-btn:focus-visible {
+	box-shadow: 0 0 0 2px var(--vt-background), 0 0 0 4px color-mix(in srgb, var(--vt-ring) 50%, transparent);
+}
+
+.vt .vt-btn:active {
+	transform: translateY(1px);
+}
+
+.vt .vt-btn:disabled {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.vt .vt-btn--sm {
+	font-size: 0.875rem;
+	height: 2.25rem;
+	padding: 0 1rem;
+}
+
+.vt .vt-btn--lg {
+	font-size: 1rem;
+	height: 3rem;
+	line-height: 1.5rem;
+	padding: 0 1.75rem;
+}
+
+.vt .vt-btn--block {
+	width: 100%;
+}
+
+.vt .vt-btn--primary,
+.vt .vt-btn--primary:hover,
+.vt .vt-btn--primary:focus {
+	background-image: var(--vt-gradient);
+	box-shadow: var(--vt-shadow-sm);
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.vt .vt-btn--primary:hover {
+	opacity: 0.9;
+}
+
+.vt .vt-btn--outline,
+.vt .vt-btn--outline:focus {
+	background-color: var(--vt-background);
+	border-color: var(--vt-border);
+	color: var(--vt-foreground);
+	text-decoration: none;
+}
+
+.vt .vt-btn--outline:hover {
+	background-color: var(--vt-muted);
+	border-color: var(--vt-border);
+	color: var(--vt-foreground);
+	text-decoration: none;
+}
+
+.vt .vt-btn--ghost,
+.vt .vt-btn--ghost:focus {
+	background-color: transparent;
+	color: color-mix(in srgb, var(--vt-foreground) 80%, transparent);
+	text-decoration: none;
+}
+
+.vt .vt-btn--ghost:hover {
+	background-color: var(--vt-muted);
+	color: var(--vt-foreground);
+	text-decoration: none;
+}
+
+.vt .vt-btn--white,
+.vt .vt-btn--white:focus {
+	background-color: #ffffff;
+	box-shadow: var(--vt-shadow-sm);
+	color: #4f46e5;
+	text-decoration: none;
+}
+
+.vt .vt-btn--white:hover {
+	background-color: rgb(255 255 255 / 0.9);
+	color: #4f46e5;
+	text-decoration: none;
+}
+
+/* ---------- Logo (cabeçalho, rodapé e login) ---------- */
+.vt .vt-logo {
+	align-items: center;
+	display: inline-flex;
+	flex-shrink: 0;
+	gap: 0.625rem;
+}
+
+.vt .vt-logo__mark {
+	align-items: center;
+	border-radius: var(--vt-radius-xl);
+	box-shadow: var(--vt-shadow-sm);
+	display: inline-flex;
+	height: 2.25rem;
+	justify-content: center;
+	width: 2.25rem;
+}
+
+.vt .vt-logo__mark svg {
+	height: 1.25rem;
+	width: 1.25rem;
+}
+
+.vt .vt-logo__name {
+	color: var(--vt-foreground);
+	font-family: var(--vt-font-display);
+	font-size: 1.25rem;
+	font-weight: 700;
+	letter-spacing: -0.025em;
+	line-height: 1.75rem;
+}
+
+.vt .vt-logo__img {
+	height: 2.25rem;
+	width: auto;
+}
+
+/* ---------- Links com seta ---------- */
+.vt .vt-arrow-link,
+.vt .vt-back-link {
+	align-items: center;
+	color: var(--vt-primary);
+	display: inline-flex;
+	font-size: 0.875rem;
+	font-weight: 600;
+	gap: 0.375rem;
+	line-height: 1.25rem;
+	text-decoration: none;
+	transition: gap 150ms, color 150ms;
+}
+
+.vt .vt-arrow-link:hover,
+.vt .vt-back-link:hover {
+	color: color-mix(in srgb, var(--vt-primary) 80%, transparent);
+	gap: 0.625rem;
+	text-decoration: none;
+}
+
+.vt .vt-arrow-link::after,
+.vt .vt-back-link::before {
+	background-color: currentColor;
+	content: '';
+	flex-shrink: 0;
+	height: 1rem;
+	-webkit-mask: var(--vt-icon-arrow-right) center / contain no-repeat;
+	mask: var(--vt-icon-arrow-right) center / contain no-repeat;
+	width: 1rem;
+}
+
+.vt .vt-back-link::before {
+	-webkit-mask-image: var(--vt-icon-arrow-left);
+	mask-image: var(--vt-icon-arrow-left);
+}
+
+/* ---------- Campos de formulário ---------- */
+.vt .vt-field + .vt-field {
+	margin-top: 1.25rem;
+}
+
+.vt .vt-label {
+	color: var(--vt-foreground);
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: 1.25rem;
+	margin-bottom: 0.375rem;
+}
+
+.vt .vt-input {
+	background-color: var(--vt-background);
+	border: 1px solid var(--vt-input);
+	border-radius: var(--vt-radius);
+	box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+	color: var(--vt-foreground);
+	display: block;
+	font-family: var(--vt-font-sans);
+	font-size: 1rem;
+	line-height: 1.5rem;
+	outline: none;
+	padding: 0.625rem 0.875rem;
+	transition: border-color 150ms, box-shadow 150ms;
+	width: 100%;
+}
+
+.vt .vt-input::placeholder {
+	color: var(--vt-muted-foreground);
+	opacity: 0.8;
+}
+
+.vt .vt-input:focus {
+	border-color: var(--vt-ring);
+	box-shadow: 0 0 0 2px color-mix(in srgb, var(--vt-ring) 30%, transparent);
+}
+
+.vt textarea.vt-input {
+	resize: vertical;
+}
+
+.vt .vt-form-error {
+	color: var(--vt-destructive);
+	font-size: 0.875rem;
+	margin-top: 1rem;
+}
+
+/* ---------- Estado de sucesso (formulários) ---------- */
+.vt .vt-success-badge {
+	align-items: center;
+	background-image: var(--vt-gradient);
+	border-radius: 9999px;
+	color: #ffffff;
+	display: inline-flex;
+	height: 3.5rem;
+	justify-content: center;
+	width: 3.5rem;
+}
+
+.vt .vt-success-badge .vt-icon {
+	height: 1.75rem;
+	width: 1.75rem;
+}
+
+/* Rótulo que só aparece no editor, marcando estados ocultos no site */
+.vt .vt-editor-label {
+	border: 1px dashed var(--vt-border);
+	border-radius: 9999px;
+	color: var(--vt-muted-foreground);
+	display: inline-block;
+	font-family: var(--vt-font-mono);
+	font-size: 0.6875rem;
+	letter-spacing: 0.05em;
+	margin-bottom: 1rem;
+	padding: 0.125rem 0.625rem;
+	text-transform: uppercase;
+}

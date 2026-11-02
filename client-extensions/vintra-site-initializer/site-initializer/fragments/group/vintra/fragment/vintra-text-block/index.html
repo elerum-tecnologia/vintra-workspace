@@ -1,0 +1,43 @@
+[#function vtBool value default]
+	[#if value?is_boolean]
+		[#return value]
+	[/#if]
+	[#if value?is_string]
+		[#if value == ""]
+			[#return default]
+		[/#if]
+		[#return value == "true"]
+	[/#if]
+	[#return default]
+[/#function]
+
+[#--
+  Vintra - Bloco de texto
+  Título + texto rico (vários parágrafos, listas, links), com imagem
+  opcional à esquerda ou à direita.
+--]
+[#assign hasImage = configuration.imagePosition != "none" /]
+
+<section class="vt vt-textblock vt-textblock--${configuration.padding!"md"} vt-bg--${configuration.background!"default"}">
+	<div class="container vt-container vt-textblock__inner ${hasImage?then('vt-textblock__inner--split vt-textblock__inner--image-' + configuration.imagePosition, 'vt-container--narrow')}">
+		<div class="vt-textblock__content">
+			[#if vtBool(configuration.showEyebrow!"", true)]
+				<span class="vt-eyebrow" data-lfr-editable-id="eyebrow" data-lfr-editable-type="text">Por que a Vintra</span>
+			[/#if]
+
+			<h2 class="vt-h2 vt-textblock__title" data-lfr-editable-id="title" data-lfr-editable-type="text">Feito para times que não podem parar</h2>
+
+			<div class="vt-textblock__body" data-lfr-editable-id="body" data-lfr-editable-type="rich-text">
+				<p>A Vintra nasceu para resolver um problema comum: sistemas que não conversam entre si e processos que dependem de planilhas paralelas.</p>
+				<p>Nossa plataforma centraliza dados, automações e integrações num único lugar, com implantação guiada por especialistas.</p>
+				<p>Hoje, times de operações, atendimento e financeiro usam a Vintra para reduzir retrabalho e tomar decisões com dados atualizados em tempo real.</p>
+			</div>
+		</div>
+
+		[#if hasImage]
+			<div class="vt-textblock__media">
+				<img alt="Time de operações colaborando com a plataforma Vintra" data-lfr-editable-id="image" data-lfr-editable-type="image" height="540" src="[resources:collaboration.jpg]" width="720" />
+			</div>
+		[/#if]
+	</div>
+</section>

@@ -1,0 +1,71 @@
+[#function vtBool value default]
+	[#if value?is_boolean]
+		[#return value]
+	[/#if]
+	[#if value?is_string]
+		[#if value == ""]
+			[#return default]
+		[/#if]
+		[#return value == "true"]
+	[/#if]
+	[#return default]
+[/#function]
+
+[#--
+  Vintra - Perguntas frequentes
+  Acordeão acessível. Perguntas (texto) e respostas (texto rico) editáveis.
+  No editor todas as respostas ficam abertas para facilitar a edição.
+--]
+[#assign
+	defaults = [
+		["Quanto tempo leva para colocar a primeira automação no ar?", "Na maioria dos casos, o primeiro fluxo entra em produção já na primeira semana. O mapeamento do processo costuma levar poucos dias e você não precisa automatizar tudo de uma vez — começamos pela etapa que mais consome tempo."],
+		["A Vintra se conecta com o ERP e o CRM que já usamos?", "Sim. Oferecemos conectores prontos para os principais ERPs, CRMs e sistemas legados, além de uma API aberta. A configuração é feita por mapeamento de campos, sem precisar desenvolver a integração do zero."],
+		["Como funciona o controle de acesso dos usuários?", "O acesso é baseado em papéis, com permissões granulares e trilhas de auditoria de cada alteração. Você define quem pode ver e editar cada informação seguindo o princípio do menor privilégio."],
+		["Preciso de equipe técnica para operar a plataforma?", "Não. O editor de fluxos é visual e pensado para times de operação. Para casos mais avançados, a API e a documentação técnica ficam à disposição de quem quiser ir além."],
+		["Consigo alterar meu plano depois de contratar?", "Sim, você pode subir ou descer de plano a qualquer momento pela própria plataforma. As mudanças são refletidas na próxima fatura e você acessa notas fiscais e faturas diretamente na área de cobrança."],
+		["Como falo com o suporte se precisar de ajuda?", "Você pode abrir um chamado a qualquer momento pela Central de ajuda. Nosso time responde em até um dia útil e ajuda a destravar a operação sempre que necessário."]
+	]
+	items = configuration.items?number
+	isEditMode = layoutMode == "edit"
+	ns = fragmentEntryLinkNamespace
+/]
+
+<section class="vt vt-faq vt-bg--${configuration.background!"default"}" data-layout-mode="${layoutMode}" data-vt-faq>
+	<div class="container vt-container vt-container--narrow">
+		<div class="vt-section-head">
+			[#if vtBool(configuration.showEyebrow!"", true)]
+				<span class="vt-eyebrow" data-lfr-editable-id="eyebrow" data-lfr-editable-type="text">Perguntas frequentes</span>
+			[/#if]
+
+			<h2 class="vt-h2" data-lfr-editable-id="title" data-lfr-editable-type="text">Dúvidas rápidas</h2>
+
+			[#if vtBool(configuration.showDescription!"", true)]
+				<p class="vt-lead" data-lfr-editable-id="description" data-lfr-editable-type="text">As respostas que mais aparecem nos nossos chamados, reunidas em um só lugar.</p>
+			[/#if]
+		</div>
+
+		<div class="vt-faq__list">
+			[#list 1..items as i]
+				[#assign
+					item = (i lte defaults?size)?then(defaults[i - 1], ["Nova pergunta?", "Escreva aqui a resposta."])
+					isOpen = isEditMode || (i == 1 && vtBool(configuration.firstOpen!"", true))
+				/]
+
+				<div class="vt-faq__item[#if isOpen] is-open[/#if]">
+					<h3 class="vt-faq__heading">
+						<button aria-controls="${ns}-panel-${i}" aria-expanded="${isOpen?c}" class="vt-faq__button" id="${ns}-button-${i}" type="button">
+							<span class="vt-faq__question" data-lfr-editable-id="item-${i}-question" data-lfr-editable-type="text">${item[0]}</span>
+							<span aria-hidden="true" class="vt-faq__chevron"><svg class="vt-icon"><use href="#vt-i-chevron-down" /></svg></span>
+						</button>
+					</h3>
+
+					<div aria-labelledby="${ns}-button-${i}" class="vt-faq__panel" id="${ns}-panel-${i}" role="region" [#if !isOpen]hidden[/#if]>
+						<div class="vt-faq__answer" data-lfr-editable-id="item-${i}-answer" data-lfr-editable-type="rich-text">
+							<p>${item[1]}</p>
+						</div>
+					</div>
+				</div>
+			[/#list]
+		</div>
+	</div>
+</section>

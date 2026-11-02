@@ -1,0 +1,1312 @@
+{
+  "fieldSets": [
+    {
+      "label": "Layout",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "3",
+          "label": "Quantidade de cards",
+          "name": "items",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              },
+              {
+                "label": "5",
+                "value": "5"
+              },
+              {
+                "label": "6",
+                "value": "6"
+              },
+              {
+                "label": "7",
+                "value": "7"
+              },
+              {
+                "label": "8",
+                "value": "8"
+              },
+              {
+                "label": "9",
+                "value": "9"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "muted",
+          "label": "Fundo da seção",
+          "name": "background",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Padrão",
+                "value": "default"
+              },
+              {
+                "label": "Cinza suave",
+                "value": "muted"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "Cabeçalho da seção",
+      "fields": [
+        {
+          "defaultValue": true,
+          "label": "Mostrar eyebrow",
+          "name": "showEyebrow",
+          "type": "checkbox"
+        },
+        {
+          "defaultValue": false,
+          "label": "Mostrar texto de introdução",
+          "name": "showIntro",
+          "type": "checkbox"
+        }
+      ]
+    },
+    {
+      "label": "Ícones dos cards",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "plug",
+          "label": "Ícone do card 1",
+          "name": "icon1",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Tomada (integrações)",
+                "value": "plug"
+              },
+              {
+                "label": "Raio (automação)",
+                "value": "zap"
+              },
+              {
+                "label": "Escudo (segurança)",
+                "value": "shield-check"
+              },
+              {
+                "label": "Camadas",
+                "value": "layers"
+              },
+              {
+                "label": "Sincronizar",
+                "value": "refresh-cw"
+              },
+              {
+                "label": "Medidor",
+                "value": "gauge"
+              },
+              {
+                "label": "Fluxo",
+                "value": "workflow"
+              },
+              {
+                "label": "Gráfico",
+                "value": "chart-column"
+              },
+              {
+                "label": "Caixas",
+                "value": "boxes"
+              },
+              {
+                "label": "Processador (API)",
+                "value": "cpu"
+              },
+              {
+                "label": "Foguete",
+                "value": "rocket"
+              },
+              {
+                "label": "Cartão",
+                "value": "credit-card"
+              },
+              {
+                "label": "Pessoas",
+                "value": "users"
+              },
+              {
+                "label": "Código",
+                "value": "code"
+              },
+              {
+                "label": "Cadeado",
+                "value": "lock"
+              },
+              {
+                "label": "Livro",
+                "value": "book-open"
+              },
+              {
+                "label": "Boia (suporte)",
+                "value": "life-buoy"
+              },
+              {
+                "label": "Documento",
+                "value": "file-text"
+              },
+              {
+                "label": "Aperto de mão",
+                "value": "heart-handshake"
+              },
+              {
+                "label": "Globo",
+                "value": "globe"
+              },
+              {
+                "label": "Brilhos",
+                "value": "sparkles"
+              },
+              {
+                "label": "Fábrica",
+                "value": "factory"
+              },
+              {
+                "label": "Loja",
+                "value": "store"
+              },
+              {
+                "label": "Instituição financeira",
+                "value": "landmark"
+              },
+              {
+                "label": "Crescimento",
+                "value": "trending-up"
+              },
+              {
+                "label": "Check",
+                "value": "check"
+              },
+              {
+                "label": "E-mail",
+                "value": "mail"
+              },
+              {
+                "label": "Telefone",
+                "value": "phone"
+              },
+              {
+                "label": "Localização",
+                "value": "map-pin"
+              },
+              {
+                "label": "Relógio",
+                "value": "clock"
+              },
+              {
+                "label": "Calendário",
+                "value": "calendar-days"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "zap",
+          "label": "Ícone do card 2",
+          "name": "icon2",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Tomada (integrações)",
+                "value": "plug"
+              },
+              {
+                "label": "Raio (automação)",
+                "value": "zap"
+              },
+              {
+                "label": "Escudo (segurança)",
+                "value": "shield-check"
+              },
+              {
+                "label": "Camadas",
+                "value": "layers"
+              },
+              {
+                "label": "Sincronizar",
+                "value": "refresh-cw"
+              },
+              {
+                "label": "Medidor",
+                "value": "gauge"
+              },
+              {
+                "label": "Fluxo",
+                "value": "workflow"
+              },
+              {
+                "label": "Gráfico",
+                "value": "chart-column"
+              },
+              {
+                "label": "Caixas",
+                "value": "boxes"
+              },
+              {
+                "label": "Processador (API)",
+                "value": "cpu"
+              },
+              {
+                "label": "Foguete",
+                "value": "rocket"
+              },
+              {
+                "label": "Cartão",
+                "value": "credit-card"
+              },
+              {
+                "label": "Pessoas",
+                "value": "users"
+              },
+              {
+                "label": "Código",
+                "value": "code"
+              },
+              {
+                "label": "Cadeado",
+                "value": "lock"
+              },
+              {
+                "label": "Livro",
+                "value": "book-open"
+              },
+              {
+                "label": "Boia (suporte)",
+                "value": "life-buoy"
+              },
+              {
+                "label": "Documento",
+                "value": "file-text"
+              },
+              {
+                "label": "Aperto de mão",
+                "value": "heart-handshake"
+              },
+              {
+                "label": "Globo",
+                "value": "globe"
+              },
+              {
+                "label": "Brilhos",
+                "value": "sparkles"
+              },
+              {
+                "label": "Fábrica",
+                "value": "factory"
+              },
+              {
+                "label": "Loja",
+                "value": "store"
+              },
+              {
+                "label": "Instituição financeira",
+                "value": "landmark"
+              },
+              {
+                "label": "Crescimento",
+                "value": "trending-up"
+              },
+              {
+                "label": "Check",
+                "value": "check"
+              },
+              {
+                "label": "E-mail",
+                "value": "mail"
+              },
+              {
+                "label": "Telefone",
+                "value": "phone"
+              },
+              {
+                "label": "Localização",
+                "value": "map-pin"
+              },
+              {
+                "label": "Relógio",
+                "value": "clock"
+              },
+              {
+                "label": "Calendário",
+                "value": "calendar-days"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "shield-check",
+          "label": "Ícone do card 3",
+          "name": "icon3",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Tomada (integrações)",
+                "value": "plug"
+              },
+              {
+                "label": "Raio (automação)",
+                "value": "zap"
+              },
+              {
+                "label": "Escudo (segurança)",
+                "value": "shield-check"
+              },
+              {
+                "label": "Camadas",
+                "value": "layers"
+              },
+              {
+                "label": "Sincronizar",
+                "value": "refresh-cw"
+              },
+              {
+                "label": "Medidor",
+                "value": "gauge"
+              },
+              {
+                "label": "Fluxo",
+                "value": "workflow"
+              },
+              {
+                "label": "Gráfico",
+                "value": "chart-column"
+              },
+              {
+                "label": "Caixas",
+                "value": "boxes"
+              },
+              {
+                "label": "Processador (API)",
+                "value": "cpu"
+              },
+              {
+                "label": "Foguete",
+                "value": "rocket"
+              },
+              {
+                "label": "Cartão",
+                "value": "credit-card"
+              },
+              {
+                "label": "Pessoas",
+                "value": "users"
+              },
+              {
+                "label": "Código",
+                "value": "code"
+              },
+              {
+                "label": "Cadeado",
+                "value": "lock"
+              },
+              {
+                "label": "Livro",
+                "value": "book-open"
+              },
+              {
+                "label": "Boia (suporte)",
+                "value": "life-buoy"
+              },
+              {
+                "label": "Documento",
+                "value": "file-text"
+              },
+              {
+                "label": "Aperto de mão",
+                "value": "heart-handshake"
+              },
+              {
+                "label": "Globo",
+                "value": "globe"
+              },
+              {
+                "label": "Brilhos",
+                "value": "sparkles"
+              },
+              {
+                "label": "Fábrica",
+                "value": "factory"
+              },
+              {
+                "label": "Loja",
+                "value": "store"
+              },
+              {
+                "label": "Instituição financeira",
+                "value": "landmark"
+              },
+              {
+                "label": "Crescimento",
+                "value": "trending-up"
+              },
+              {
+                "label": "Check",
+                "value": "check"
+              },
+              {
+                "label": "E-mail",
+                "value": "mail"
+              },
+              {
+                "label": "Telefone",
+                "value": "phone"
+              },
+              {
+                "label": "Localização",
+                "value": "map-pin"
+              },
+              {
+                "label": "Relógio",
+                "value": "clock"
+              },
+              {
+                "label": "Calendário",
+                "value": "calendar-days"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "workflow",
+          "label": "Ícone do card 4",
+          "name": "icon4",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Tomada (integrações)",
+                "value": "plug"
+              },
+              {
+                "label": "Raio (automação)",
+                "value": "zap"
+              },
+              {
+                "label": "Escudo (segurança)",
+                "value": "shield-check"
+              },
+              {
+                "label": "Camadas",
+                "value": "layers"
+              },
+              {
+                "label": "Sincronizar",
+                "value": "refresh-cw"
+              },
+              {
+                "label": "Medidor",
+                "value": "gauge"
+              },
+              {
+                "label": "Fluxo",
+                "value": "workflow"
+              },
+              {
+                "label": "Gráfico",
+                "value": "chart-column"
+              },
+              {
+                "label": "Caixas",
+                "value": "boxes"
+              },
+              {
+                "label": "Processador (API)",
+                "value": "cpu"
+              },
+              {
+                "label": "Foguete",
+                "value": "rocket"
+              },
+              {
+                "label": "Cartão",
+                "value": "credit-card"
+              },
+              {
+                "label": "Pessoas",
+                "value": "users"
+              },
+              {
+                "label": "Código",
+                "value": "code"
+              },
+              {
+                "label": "Cadeado",
+                "value": "lock"
+              },
+              {
+                "label": "Livro",
+                "value": "book-open"
+              },
+              {
+                "label": "Boia (suporte)",
+                "value": "life-buoy"
+              },
+              {
+                "label": "Documento",
+                "value": "file-text"
+              },
+              {
+                "label": "Aperto de mão",
+                "value": "heart-handshake"
+              },
+              {
+                "label": "Globo",
+                "value": "globe"
+              },
+              {
+                "label": "Brilhos",
+                "value": "sparkles"
+              },
+              {
+                "label": "Fábrica",
+                "value": "factory"
+              },
+              {
+                "label": "Loja",
+                "value": "store"
+              },
+              {
+                "label": "Instituição financeira",
+                "value": "landmark"
+              },
+              {
+                "label": "Crescimento",
+                "value": "trending-up"
+              },
+              {
+                "label": "Check",
+                "value": "check"
+              },
+              {
+                "label": "E-mail",
+                "value": "mail"
+              },
+              {
+                "label": "Telefone",
+                "value": "phone"
+              },
+              {
+                "label": "Localização",
+                "value": "map-pin"
+              },
+              {
+                "label": "Relógio",
+                "value": "clock"
+              },
+              {
+                "label": "Calendário",
+                "value": "calendar-days"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "credit-card",
+          "label": "Ícone do card 5",
+          "name": "icon5",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Tomada (integrações)",
+                "value": "plug"
+              },
+              {
+                "label": "Raio (automação)",
+                "value": "zap"
+              },
+              {
+                "label": "Escudo (segurança)",
+                "value": "shield-check"
+              },
+              {
+                "label": "Camadas",
+                "value": "layers"
+              },
+              {
+                "label": "Sincronizar",
+                "value": "refresh-cw"
+              },
+              {
+                "label": "Medidor",
+                "value": "gauge"
+              },
+              {
+                "label": "Fluxo",
+                "value": "workflow"
+              },
+              {
+                "label": "Gráfico",
+                "value": "chart-column"
+              },
+              {
+                "label": "Caixas",
+                "value": "boxes"
+              },
+              {
+                "label": "Processador (API)",
+                "value": "cpu"
+              },
+              {
+                "label": "Foguete",
+                "value": "rocket"
+              },
+              {
+                "label": "Cartão",
+                "value": "credit-card"
+              },
+              {
+                "label": "Pessoas",
+                "value": "users"
+              },
+              {
+                "label": "Código",
+                "value": "code"
+              },
+              {
+                "label": "Cadeado",
+                "value": "lock"
+              },
+              {
+                "label": "Livro",
+                "value": "book-open"
+              },
+              {
+                "label": "Boia (suporte)",
+                "value": "life-buoy"
+              },
+              {
+                "label": "Documento",
+                "value": "file-text"
+              },
+              {
+                "label": "Aperto de mão",
+                "value": "heart-handshake"
+              },
+              {
+                "label": "Globo",
+                "value": "globe"
+              },
+              {
+                "label": "Brilhos",
+                "value": "sparkles"
+              },
+              {
+                "label": "Fábrica",
+                "value": "factory"
+              },
+              {
+                "label": "Loja",
+                "value": "store"
+              },
+              {
+                "label": "Instituição financeira",
+                "value": "landmark"
+              },
+              {
+                "label": "Crescimento",
+                "value": "trending-up"
+              },
+              {
+                "label": "Check",
+                "value": "check"
+              },
+              {
+                "label": "E-mail",
+                "value": "mail"
+              },
+              {
+                "label": "Telefone",
+                "value": "phone"
+              },
+              {
+                "label": "Localização",
+                "value": "map-pin"
+              },
+              {
+                "label": "Relógio",
+                "value": "clock"
+              },
+              {
+                "label": "Calendário",
+                "value": "calendar-days"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "users",
+          "label": "Ícone do card 6",
+          "name": "icon6",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Tomada (integrações)",
+                "value": "plug"
+              },
+              {
+                "label": "Raio (automação)",
+                "value": "zap"
+              },
+              {
+                "label": "Escudo (segurança)",
+                "value": "shield-check"
+              },
+              {
+                "label": "Camadas",
+                "value": "layers"
+              },
+              {
+                "label": "Sincronizar",
+                "value": "refresh-cw"
+              },
+              {
+                "label": "Medidor",
+                "value": "gauge"
+              },
+              {
+                "label": "Fluxo",
+                "value": "workflow"
+              },
+              {
+                "label": "Gráfico",
+                "value": "chart-column"
+              },
+              {
+                "label": "Caixas",
+                "value": "boxes"
+              },
+              {
+                "label": "Processador (API)",
+                "value": "cpu"
+              },
+              {
+                "label": "Foguete",
+                "value": "rocket"
+              },
+              {
+                "label": "Cartão",
+                "value": "credit-card"
+              },
+              {
+                "label": "Pessoas",
+                "value": "users"
+              },
+              {
+                "label": "Código",
+                "value": "code"
+              },
+              {
+                "label": "Cadeado",
+                "value": "lock"
+              },
+              {
+                "label": "Livro",
+                "value": "book-open"
+              },
+              {
+                "label": "Boia (suporte)",
+                "value": "life-buoy"
+              },
+              {
+                "label": "Documento",
+                "value": "file-text"
+              },
+              {
+                "label": "Aperto de mão",
+                "value": "heart-handshake"
+              },
+              {
+                "label": "Globo",
+                "value": "globe"
+              },
+              {
+                "label": "Brilhos",
+                "value": "sparkles"
+              },
+              {
+                "label": "Fábrica",
+                "value": "factory"
+              },
+              {
+                "label": "Loja",
+                "value": "store"
+              },
+              {
+                "label": "Instituição financeira",
+                "value": "landmark"
+              },
+              {
+                "label": "Crescimento",
+                "value": "trending-up"
+              },
+              {
+                "label": "Check",
+                "value": "check"
+              },
+              {
+                "label": "E-mail",
+                "value": "mail"
+              },
+              {
+                "label": "Telefone",
+                "value": "phone"
+              },
+              {
+                "label": "Localização",
+                "value": "map-pin"
+              },
+              {
+                "label": "Relógio",
+                "value": "clock"
+              },
+              {
+                "label": "Calendário",
+                "value": "calendar-days"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "rocket",
+          "label": "Ícone do card 7",
+          "name": "icon7",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Tomada (integrações)",
+                "value": "plug"
+              },
+              {
+                "label": "Raio (automação)",
+                "value": "zap"
+              },
+              {
+                "label": "Escudo (segurança)",
+                "value": "shield-check"
+              },
+              {
+                "label": "Camadas",
+                "value": "layers"
+              },
+              {
+                "label": "Sincronizar",
+                "value": "refresh-cw"
+              },
+              {
+                "label": "Medidor",
+                "value": "gauge"
+              },
+              {
+                "label": "Fluxo",
+                "value": "workflow"
+              },
+              {
+                "label": "Gráfico",
+                "value": "chart-column"
+              },
+              {
+                "label": "Caixas",
+                "value": "boxes"
+              },
+              {
+                "label": "Processador (API)",
+                "value": "cpu"
+              },
+              {
+                "label": "Foguete",
+                "value": "rocket"
+              },
+              {
+                "label": "Cartão",
+                "value": "credit-card"
+              },
+              {
+                "label": "Pessoas",
+                "value": "users"
+              },
+              {
+                "label": "Código",
+                "value": "code"
+              },
+              {
+                "label": "Cadeado",
+                "value": "lock"
+              },
+              {
+                "label": "Livro",
+                "value": "book-open"
+              },
+              {
+                "label": "Boia (suporte)",
+                "value": "life-buoy"
+              },
+              {
+                "label": "Documento",
+                "value": "file-text"
+              },
+              {
+                "label": "Aperto de mão",
+                "value": "heart-handshake"
+              },
+              {
+                "label": "Globo",
+                "value": "globe"
+              },
+              {
+                "label": "Brilhos",
+                "value": "sparkles"
+              },
+              {
+                "label": "Fábrica",
+                "value": "factory"
+              },
+              {
+                "label": "Loja",
+                "value": "store"
+              },
+              {
+                "label": "Instituição financeira",
+                "value": "landmark"
+              },
+              {
+                "label": "Crescimento",
+                "value": "trending-up"
+              },
+              {
+                "label": "Check",
+                "value": "check"
+              },
+              {
+                "label": "E-mail",
+                "value": "mail"
+              },
+              {
+                "label": "Telefone",
+                "value": "phone"
+              },
+              {
+                "label": "Localização",
+                "value": "map-pin"
+              },
+              {
+                "label": "Relógio",
+                "value": "clock"
+              },
+              {
+                "label": "Calendário",
+                "value": "calendar-days"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "globe",
+          "label": "Ícone do card 8",
+          "name": "icon8",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Tomada (integrações)",
+                "value": "plug"
+              },
+              {
+                "label": "Raio (automação)",
+                "value": "zap"
+              },
+              {
+                "label": "Escudo (segurança)",
+                "value": "shield-check"
+              },
+              {
+                "label": "Camadas",
+                "value": "layers"
+              },
+              {
+                "label": "Sincronizar",
+                "value": "refresh-cw"
+              },
+              {
+                "label": "Medidor",
+                "value": "gauge"
+              },
+              {
+                "label": "Fluxo",
+                "value": "workflow"
+              },
+              {
+                "label": "Gráfico",
+                "value": "chart-column"
+              },
+              {
+                "label": "Caixas",
+                "value": "boxes"
+              },
+              {
+                "label": "Processador (API)",
+                "value": "cpu"
+              },
+              {
+                "label": "Foguete",
+                "value": "rocket"
+              },
+              {
+                "label": "Cartão",
+                "value": "credit-card"
+              },
+              {
+                "label": "Pessoas",
+                "value": "users"
+              },
+              {
+                "label": "Código",
+                "value": "code"
+              },
+              {
+                "label": "Cadeado",
+                "value": "lock"
+              },
+              {
+                "label": "Livro",
+                "value": "book-open"
+              },
+              {
+                "label": "Boia (suporte)",
+                "value": "life-buoy"
+              },
+              {
+                "label": "Documento",
+                "value": "file-text"
+              },
+              {
+                "label": "Aperto de mão",
+                "value": "heart-handshake"
+              },
+              {
+                "label": "Globo",
+                "value": "globe"
+              },
+              {
+                "label": "Brilhos",
+                "value": "sparkles"
+              },
+              {
+                "label": "Fábrica",
+                "value": "factory"
+              },
+              {
+                "label": "Loja",
+                "value": "store"
+              },
+              {
+                "label": "Instituição financeira",
+                "value": "landmark"
+              },
+              {
+                "label": "Crescimento",
+                "value": "trending-up"
+              },
+              {
+                "label": "Check",
+                "value": "check"
+              },
+              {
+                "label": "E-mail",
+                "value": "mail"
+              },
+              {
+                "label": "Telefone",
+                "value": "phone"
+              },
+              {
+                "label": "Localização",
+                "value": "map-pin"
+              },
+              {
+                "label": "Relógio",
+                "value": "clock"
+              },
+              {
+                "label": "Calendário",
+                "value": "calendar-days"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "sparkles",
+          "label": "Ícone do card 9",
+          "name": "icon9",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Tomada (integrações)",
+                "value": "plug"
+              },
+              {
+                "label": "Raio (automação)",
+                "value": "zap"
+              },
+              {
+                "label": "Escudo (segurança)",
+                "value": "shield-check"
+              },
+              {
+                "label": "Camadas",
+                "value": "layers"
+              },
+              {
+                "label": "Sincronizar",
+                "value": "refresh-cw"
+              },
+              {
+                "label": "Medidor",
+                "value": "gauge"
+              },
+              {
+                "label": "Fluxo",
+                "value": "workflow"
+              },
+              {
+                "label": "Gráfico",
+                "value": "chart-column"
+              },
+              {
+                "label": "Caixas",
+                "value": "boxes"
+              },
+              {
+                "label": "Processador (API)",
+                "value": "cpu"
+              },
+              {
+                "label": "Foguete",
+                "value": "rocket"
+              },
+              {
+                "label": "Cartão",
+                "value": "credit-card"
+              },
+              {
+                "label": "Pessoas",
+                "value": "users"
+              },
+              {
+                "label": "Código",
+                "value": "code"
+              },
+              {
+                "label": "Cadeado",
+                "value": "lock"
+              },
+              {
+                "label": "Livro",
+                "value": "book-open"
+              },
+              {
+                "label": "Boia (suporte)",
+                "value": "life-buoy"
+              },
+              {
+                "label": "Documento",
+                "value": "file-text"
+              },
+              {
+                "label": "Aperto de mão",
+                "value": "heart-handshake"
+              },
+              {
+                "label": "Globo",
+                "value": "globe"
+              },
+              {
+                "label": "Brilhos",
+                "value": "sparkles"
+              },
+              {
+                "label": "Fábrica",
+                "value": "factory"
+              },
+              {
+                "label": "Loja",
+                "value": "store"
+              },
+              {
+                "label": "Instituição financeira",
+                "value": "landmark"
+              },
+              {
+                "label": "Crescimento",
+                "value": "trending-up"
+              },
+              {
+                "label": "Check",
+                "value": "check"
+              },
+              {
+                "label": "E-mail",
+                "value": "mail"
+              },
+              {
+                "label": "Telefone",
+                "value": "phone"
+              },
+              {
+                "label": "Localização",
+                "value": "map-pin"
+              },
+              {
+                "label": "Relógio",
+                "value": "clock"
+              },
+              {
+                "label": "Calendário",
+                "value": "calendar-days"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

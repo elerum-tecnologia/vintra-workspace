@@ -1,0 +1,147 @@
+/* Vintra - Corpo de artigo */
+.vt.vt-article-body {
+	padding: 3.5rem 0;
+}
+
+@media (min-width: 640px) {
+	.vt.vt-article-body {
+		padding: 4rem 0;
+	}
+}
+
+.vt .vt-prose {
+	color: var(--vt-muted-foreground);
+	font-size: 1.125rem;
+	line-height: 1.625;
+	text-wrap: pretty;
+}
+
+.vt .vt-prose > * + * {
+	margin-top: 1.5rem;
+}
+
+.vt .vt-prose h2,
+.vt .vt-prose h3 {
+	color: var(--vt-foreground);
+	font-family: var(--vt-font-display);
+	font-weight: 700;
+	letter-spacing: -0.025em;
+	text-wrap: balance;
+}
+
+.vt .vt-prose h2 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+	margin-top: 3rem;
+}
+
+.vt .vt-prose h3 {
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+	margin-top: 2.25rem;
+}
+
+@media (min-width: 640px) {
+	.vt .vt-prose h2 {
+		font-size: 1.875rem;
+		line-height: 2.25rem;
+	}
+}
+
+.vt .vt-prose > h2:first-child,
+.vt .vt-prose > h3:first-child {
+	margin-top: 0;
+}
+
+.vt .vt-prose a {
+	color: var(--vt-primary);
+	text-decoration: underline;
+	text-underline-offset: 4px;
+}
+
+.vt .vt-prose strong {
+	color: var(--vt-foreground);
+	font-weight: 600;
+}
+
+.vt .vt-prose ul {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	list-style: none;
+	padding: 0;
+}
+
+.vt .vt-prose ul li {
+	padding-left: 2rem;
+	position: relative;
+}
+
+.vt .vt-prose ul li::before,
+.vt .vt-prose ul li::after {
+	content: '';
+	position: absolute;
+}
+
+/* círculo com o gradiente da marca */
+.vt .vt-prose ul li::before {
+	background-image: var(--vt-gradient);
+	border-radius: 9999px;
+	height: 1.25rem;
+	left: 0;
+	top: 0.25rem;
+	width: 1.25rem;
+}
+
+/* check branco por cima */
+.vt .vt-prose ul li::after {
+	background-color: #ffffff;
+	height: 0.75rem;
+	left: 0.25rem;
+	-webkit-mask: var(--vt-icon-check) center / contain no-repeat;
+	mask: var(--vt-icon-check) center / contain no-repeat;
+	top: 0.5rem;
+	width: 0.75rem;
+}
+
+.vt .vt-prose ol {
+	list-style: decimal;
+	padding-left: 1.5rem;
+}
+
+.vt .vt-prose ol li + li {
+	margin-top: 0.75rem;
+}
+
+.vt .vt-prose blockquote {
+	background-color: color-mix(in srgb, var(--vt-accent) 40%, transparent);
+	border-left: 4px solid var(--vt-primary);
+	margin: 2rem 0;
+	padding: 1.25rem 1.5rem;
+}
+
+.vt .vt-prose blockquote p {
+	color: var(--vt-foreground);
+	font-size: 1.25rem;
+	font-style: italic;
+	font-weight: 500;
+	line-height: 1.625;
+}
+
+.vt .vt-prose blockquote cite,
+.vt .vt-prose blockquote p + p {
+	color: var(--vt-primary);
+	display: block;
+	font-family: var(--vt-font-mono);
+	font-size: 0.75rem;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	line-height: 1rem;
+	margin-top: 0.75rem;
+	text-transform: uppercase;
+}
+
+.vt .vt-prose img {
+	border-radius: var(--vt-radius-2xl);
+}

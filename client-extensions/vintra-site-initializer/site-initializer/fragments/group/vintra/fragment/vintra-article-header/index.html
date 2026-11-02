@@ -1,0 +1,75 @@
+[#function vtBool value default]
+	[#if value?is_boolean]
+		[#return value]
+	[/#if]
+	[#if value?is_string]
+		[#if value == ""]
+			[#return default]
+		[/#if]
+		[#return value == "true"]
+	[/#if]
+	[#return default]
+[/#function]
+
+[#--
+  Vintra - Cabeçalho de artigo
+  Ideal para um Modelo de Página de Exibição (Display Page Template) de
+  Blog ou Conteúdo Web: mapeie categoria, título, resumo, autor, data,
+  tempo de leitura e capa aos campos do conteúdo.
+--]
+<section class="vt vt-article-header">
+	<div aria-hidden="true" class="vt-glow"></div>
+
+	<div class="container vt-container vt-container--narrow">
+		[#if vtBool(configuration.showBackLink!"", true)!true]
+			<a class="vt-back-link" data-lfr-editable-id="back" data-lfr-editable-type="link" href="/recursos/blog">Voltar para o blog</a>
+		[/#if]
+
+		<div class="vt-article-header__head">
+			<span class="vt-eyebrow" data-lfr-editable-id="category" data-lfr-editable-type="text">Produtividade</span>
+
+			<h1 class="vt-article-header__title" data-lfr-editable-id="title" data-lfr-editable-type="text">5 sinais de que sua operação precisa de automação</h1>
+
+			[#if vtBool(configuration.showExcerpt!"", true)!true]
+				<p class="vt-article-header__excerpt" data-lfr-editable-id="excerpt" data-lfr-editable-type="text">Retrabalho, planilhas paralelas e prazos estourados: reconheça os sintomas antes que virem gargalo.</p>
+			[/#if]
+		</div>
+
+		[#if (vtBool(configuration.showAuthor!"", true)) || (vtBool(configuration.showMeta!"", true))]
+			<div class="vt-article-header__byline">
+				[#if vtBool(configuration.showAuthor!"", true)]
+					<div class="vt-article-header__author">
+						<span class="vt-article-header__avatar">
+							<img alt="Retrato de Camila Duarte" data-lfr-editable-id="author-image" data-lfr-editable-type="image" src="[resources:team-camila.jpg]" />
+						</span>
+						<span class="vt-article-header__author-text">
+							<span class="vt-article-header__author-name" data-lfr-editable-id="author-name" data-lfr-editable-type="text">Camila Duarte</span>
+							<span class="vt-article-header__author-role" data-lfr-editable-id="author-role" data-lfr-editable-type="text">Head de Produto</span>
+						</span>
+					</div>
+				[/#if]
+
+				[#if vtBool(configuration.showMeta!"", true)]
+					<div class="vt-article-header__meta">
+						<span class="vt-article-header__meta-item">
+							<svg aria-hidden="true" class="vt-icon"><use href="#vt-i-calendar-days" /></svg>
+							<span data-lfr-editable-id="date" data-lfr-editable-type="text">12 de março de 2026</span>
+						</span>
+						<span class="vt-article-header__meta-item">
+							<svg aria-hidden="true" class="vt-icon"><use href="#vt-i-clock" /></svg>
+							<span data-lfr-editable-id="read-time" data-lfr-editable-type="text">6 min de leitura</span>
+						</span>
+					</div>
+				[/#if]
+			</div>
+		[/#if]
+	</div>
+
+	[#if vtBool(configuration.showCover!"", true)!true]
+		<div class="container vt-container vt-container--medium vt-article-header__cover-wrap">
+			<div class="vt-article-header__cover">
+				<img alt="Ilustração de automação de processos" data-lfr-editable-id="cover" data-lfr-editable-type="image" height="540" src="[resources:blog-automation.jpg]" width="960" />
+			</div>
+		</div>
+	[/#if]
+</section>

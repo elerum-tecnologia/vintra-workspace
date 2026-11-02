@@ -1,0 +1,63 @@
+{
+  "fieldSets": [
+    {
+      "label": "Layout",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "lg",
+          "label": "Tamanho",
+          "name": "size",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Grande (página inicial, com imagem)",
+                "value": "lg"
+              },
+              {
+                "label": "Compacto (subpáginas, centralizado)",
+                "value": "sm"
+              }
+            ]
+          }
+        },
+        {
+          "defaultValue": true,
+          "label": "Mostrar imagem (só no tamanho Grande)",
+          "name": "showImage",
+          "type": "checkbox"
+        }
+      ]
+    },
+    {
+      "label": "Conteúdo",
+      "fields": [
+        {
+          "defaultValue": true,
+          "label": "Mostrar selo (eyebrow)",
+          "name": "showEyebrow",
+          "type": "checkbox"
+        },
+        {
+          "defaultValue": true,
+          "label": "Mostrar descrição",
+          "name": "showDescription",
+          "type": "checkbox"
+        },
+        {
+          "defaultValue": true,
+          "label": "Mostrar botão principal",
+          "name": "showPrimary",
+          "type": "checkbox"
+        },
+        {
+          "defaultValue": true,
+          "label": "Mostrar botão secundário",
+          "name": "showSecondary",
+          "type": "checkbox"
+        }
+      ]
+    }
+  ]
+}

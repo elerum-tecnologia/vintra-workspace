@@ -1,0 +1,11 @@
+{
+  "friendlyURL": "/recursos/blog",
+  "hidden": false,
+  "name": "Blog",
+  "name_i18n": {
+    "pt_BR": "Blog"
+  },
+  "private": false,
+  "system": false,
+  "type": "Content"
+}

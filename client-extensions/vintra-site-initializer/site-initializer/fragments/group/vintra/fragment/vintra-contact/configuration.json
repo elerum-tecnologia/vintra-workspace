@@ -1,0 +1,82 @@
+{
+  "fieldSets": [
+    {
+      "label": "Conteúdo",
+      "fields": [
+        {
+          "defaultValue": false,
+          "label": "Mostrar eyebrow",
+          "name": "showEyebrow",
+          "type": "checkbox"
+        },
+        {
+          "defaultValue": true,
+          "label": "Mostrar descrição",
+          "name": "showDescription",
+          "type": "checkbox"
+        }
+      ]
+    },
+    {
+      "label": "Envio do formulário",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "",
+          "description": "Vazio = modo demonstração (só mostra a mensagem de sucesso). Para gravar num Objeto do Liferay, use a URL headless do objeto, ex.: /o/c/contatos — os campos são enviados em JSON com o token CSRF do Liferay.",
+          "label": "Endpoint de envio (opcional)",
+          "name": "endpoint",
+          "type": "text"
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "nome",
+          "description": "Chave enviada ao endpoint (ex.: nome do campo no Objeto).",
+          "label": "Nome do campo: nome",
+          "name": "fieldName",
+          "type": "text"
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "email",
+          "label": "Nome do campo: e-mail",
+          "name": "fieldEmail",
+          "type": "text"
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "mensagem",
+          "label": "Nome do campo: mensagem",
+          "name": "fieldMessage",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "label": "Placeholders",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "Seu nome",
+          "label": "Placeholder do nome",
+          "name": "placeholderName",
+          "type": "text"
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "voce@empresa.com.br",
+          "label": "Placeholder do e-mail",
+          "name": "placeholderEmail",
+          "type": "text"
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "Como podemos ajudar?",
+          "label": "Placeholder da mensagem",
+          "name": "placeholderMessage",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}

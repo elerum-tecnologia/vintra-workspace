@@ -1,0 +1,9 @@
+{
+	"configurationPath": "configuration.json",
+	"cssPath": "index.css",
+	"htmlPath": "index.html",
+	"icon": "envelope-closed",
+	"jsPath": "index.js",
+	"name": "Vintra - Contato",
+	"type": "component"
+}

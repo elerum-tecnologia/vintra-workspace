@@ -1,0 +1,48 @@
+{
+  "pageElement": {
+    "pageElements": [
+      {
+        "type": "Fragment",
+        "definition": {
+          "fragment": {
+            "key": "vintra-base"
+          },
+          "fragmentConfig": {},
+          "fragmentFields": [],
+          "indexed": true
+        }
+      },
+      {
+        "type": "Fragment",
+        "definition": {
+          "fragment": {
+            "key": "vintra-header"
+          },
+          "fragmentConfig": {},
+          "fragmentFields": [],
+          "indexed": true
+        }
+      },
+      {
+        "type": "DropZone",
+        "definition": {
+          "fragmentSettings": {
+            "unallowedFragments": []
+          }
+        }
+      },
+      {
+        "type": "Fragment",
+        "definition": {
+          "fragment": {
+            "key": "vintra-footer"
+          },
+          "fragmentConfig": {},
+          "fragmentFields": [],
+          "indexed": true
+        }
+      }
+    ],
+    "type": "Root"
+  }
+}

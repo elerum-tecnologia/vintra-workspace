@@ -1,0 +1,34 @@
+{
+  "pageElement": {
+    "pageElements": [
+      {
+        "type": "Fragment",
+        "definition": {
+          "fragment": {
+            "key": "vintra-hero"
+          },
+          "fragmentConfig": {
+            "size": "sm"
+          },
+          "fragmentFields": []
+        }
+      },
+      {
+        "type": "Fragment",
+        "definition": {
+          "fragment": {
+            "key": "vintra-contact"
+          },
+          "fragmentConfig": {},
+          "fragmentFields": []
+        }
+      }
+    ],
+    "type": "Root"
+  },
+  "settings": {
+    "masterPage": {
+      "key": "vintra"
+    }
+  }
+}

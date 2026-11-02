@@ -1,0 +1,332 @@
+{
+  "fieldSets": [
+    {
+      "label": "Marca",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "mark",
+          "label": "Tipo de logo",
+          "name": "logoType",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Símbolo Vintra + nome",
+                "value": "mark"
+              },
+              {
+                "label": "Imagem (editável)",
+                "value": "image"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "/",
+          "label": "Link do logo",
+          "name": "homeUrl",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "label": "Colunas de links",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "4",
+          "label": "Quantidade de colunas",
+          "name": "columns",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "0",
+                "value": "0"
+              },
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "3",
+          "label": "Links da coluna 1",
+          "name": "column1Links",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "0",
+                "value": "0"
+              },
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              },
+              {
+                "label": "5",
+                "value": "5"
+              },
+              {
+                "label": "6",
+                "value": "6"
+              },
+              {
+                "label": "7",
+                "value": "7"
+              },
+              {
+                "label": "8",
+                "value": "8"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "3",
+          "label": "Links da coluna 2",
+          "name": "column2Links",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "0",
+                "value": "0"
+              },
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              },
+              {
+                "label": "5",
+                "value": "5"
+              },
+              {
+                "label": "6",
+                "value": "6"
+              },
+              {
+                "label": "7",
+                "value": "7"
+              },
+              {
+                "label": "8",
+                "value": "8"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "3",
+          "label": "Links da coluna 3",
+          "name": "column3Links",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "0",
+                "value": "0"
+              },
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              },
+              {
+                "label": "5",
+                "value": "5"
+              },
+              {
+                "label": "6",
+                "value": "6"
+              },
+              {
+                "label": "7",
+                "value": "7"
+              },
+              {
+                "label": "8",
+                "value": "8"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "3",
+          "label": "Links da coluna 4",
+          "name": "column4Links",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "0",
+                "value": "0"
+              },
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              },
+              {
+                "label": "5",
+                "value": "5"
+              },
+              {
+                "label": "6",
+                "value": "6"
+              },
+              {
+                "label": "7",
+                "value": "7"
+              },
+              {
+                "label": "8",
+                "value": "8"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "Redes sociais",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "https://facebook.com",
+          "description": "Deixe vazio para ocultar.",
+          "label": "Facebook (URL)",
+          "name": "facebook",
+          "type": "text"
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "https://instagram.com",
+          "description": "Deixe vazio para ocultar.",
+          "label": "Instagram (URL)",
+          "name": "instagram",
+          "type": "text"
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "https://linkedin.com",
+          "description": "Deixe vazio para ocultar.",
+          "label": "LinkedIn (URL)",
+          "name": "linkedin",
+          "type": "text"
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "https://x.com",
+          "description": "Deixe vazio para ocultar.",
+          "label": "X / Twitter (URL)",
+          "name": "x",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "label": "Barra inferior",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "2",
+          "label": "Links na barra inferior",
+          "name": "bottomLinks",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "0",
+                "value": "0"
+              },
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

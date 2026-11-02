@@ -1,0 +1,99 @@
+[#--
+  Vintra - Rodapé
+  Use na Página Mestra. Colunas, links e redes sociais são configuráveis;
+  todos os textos e links são editáveis. O ano do copyright é automático.
+--]
+[#assign
+	columnDefaults = [
+		{"label": "Produtos", "href": "/produtos", "links": [["Plataforma Vintra", "/produtos/plataforma"], ["Integrações", "/produtos/integracoes"], ["Preços", "/produtos/precos"]]},
+		{"label": "Soluções", "href": "/solucoes", "links": [["Varejo", "/solucoes/varejo"], ["Indústria", "/solucoes/industria"], ["Serviços financeiros", "/solucoes/servicos-financeiros"]]},
+		{"label": "Sobre", "href": "/sobre", "links": [["Nossa história", "/sobre/historia"], ["Equipe", "/sobre/equipe"], ["Carreiras", "/sobre/carreiras"]]},
+		{"label": "Recursos", "href": "/recursos", "links": [["Blog", "/recursos/blog"], ["Central de ajuda", "/recursos/ajuda"], ["Documentação", "/recursos/documentacao"]]}
+	]
+	bottomDefaults = [["Política de cookies", "/politica-de-cookies"], ["Contato", "/contato"]]
+	socials = [
+		{"key": "facebook", "label": "Facebook", "path": "M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.3-1.5 1.6-1.5h1.6V4.6c-.8-.1-1.6-.2-2.4-.2-2.4 0-4 1.5-4 4.1v2.4H8v3.1h2.8V22z"},
+		{"key": "instagram", "label": "Instagram", "path": "M12 4c-2.17 0-2.44.01-3.3.05-.85.04-1.43.17-1.94.37-.53.2-.98.48-1.42.93-.45.44-.72.89-.93 1.42-.2.51-.33 1.1-.37 1.94C4.01 9.56 4 9.83 4 12s.01 2.44.05 3.3c.04.85.17 1.43.37 1.94.2.53.48.98.93 1.42.44.45.89.72 1.42.93.51.2 1.1.33 1.94.37.86.04 1.13.05 3.3.05s2.44-.01 3.3-.05c.85-.04 1.43-.17 1.94-.37.53-.2.98-.48 1.42-.93.45-.44.72-.89.93-1.42.2-.51.33-1.1.37-1.94.04-.86.05-1.13.05-3.3s-.01-2.44-.05-3.3c-.04-.85-.17-1.43-.37-1.94a3.9 3.9 0 0 0-.93-1.42 3.9 3.9 0 0 0-1.42-.93c-.51-.2-1.1-.33-1.94-.37C14.44 4.01 14.17 4 12 4m0 1.8c2.13 0 2.39.01 3.23.05.78.04 1.2.17 1.49.28.37.14.64.32.92.6.28.28.46.55.6.92.11.28.24.7.28 1.49.04.84.05 1.1.05 3.23s-.01 2.39-.05 3.23c-.04.78-.17 1.2-.28 1.49-.14.37-.32.64-.6.92-.28.28-.55.46-.92.6-.28.11-.7.24-1.49.28-.84.04-1.1.05-3.23.05s-2.39-.01-3.23-.05c-.78-.04-1.2-.17-1.49-.28a2.5 2.5 0 0 1-.92-.6 2.5 2.5 0 0 1-.6-.92c-.11-.28-.24-.7-.28-1.49-.04-.84-.05-1.1-.05-3.23s.01-2.39.05-3.23c.04-.78.17-1.2.28-1.49.14-.37.32-.64.6-.92.28-.28.55-.46.92-.6.28-.11.7-.24 1.49-.28.84-.04 1.1-.05 3.23-.05m0 3.06A4.14 4.14 0 1 0 12 17.14 4.14 4.14 0 0 0 12 8.86m0 6.83A2.69 2.69 0 1 1 12 10.3a2.69 2.69 0 0 1 0 5.39m5.27-7.03a.97.97 0 1 0 0 1.94.97.97 0 0 0 0-1.94"},
+		{"key": "linkedin", "label": "LinkedIn", "path": "M8.3 18V9.7H5.6V18zM6.95 8.6a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1M18.4 18v-4.6c0-2.5-1.3-3.6-3.1-3.6-1.4 0-2 .8-2.4 1.3V9.7h-2.7c.04.8 0 8.3 0 8.3h2.7v-4.6c0-.25 0-.5.08-.67.2-.5.65-1 1.4-1 1 0 1.4.75 1.4 1.85V18z"},
+		{"key": "x", "label": "X", "path": "M17.3 5.5h2.1l-4.6 5.3 5.4 7.2h-4.2l-3.3-4.4-3.8 4.4H6.8l4.9-5.7-5.2-6.8h4.3l3 4zm-.75 11h1.17L8.5 6.7H7.25z"}
+	]
+	columns = configuration.columns?number
+	bottomLinks = configuration.bottomLinks?number
+/]
+
+<footer class="vt vt-footer">
+	<div class="container vt-container vt-footer__inner">
+		<div class="vt-footer__grid">
+			<div class="vt-footer__brand">
+				<a aria-label="Página inicial" class="vt-logo" href="${configuration.homeUrl!"/"}">
+					[#if configuration.logoType == "image"]
+						<img alt="Vintra" class="vt-logo__img" data-lfr-editable-id="logo-image" data-lfr-editable-type="image" src="" />
+					[#else]
+						<span aria-hidden="true" class="vt-logo__mark vt-gradient">
+							<svg fill="none" viewBox="0 0 24 24"><path d="M5 6.5 12 18l7-11.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" /></svg>
+						</span>
+						<span class="vt-logo__name" data-lfr-editable-id="logo-name" data-lfr-editable-type="text">Vintra</span>
+					[/#if]
+				</a>
+
+				<p class="vt-footer__tagline" data-lfr-editable-id="tagline" data-lfr-editable-type="text">Construindo experiências digitais melhores.</p>
+
+				<div class="vt-footer__socials">
+					[#list socials as social]
+						[#assign socialUrl = configuration[social.key]!"" /]
+
+						[#if socialUrl?has_content]
+							<a aria-label="${social.label}" class="vt-footer__social" href="${socialUrl}" rel="noopener noreferrer" target="_blank">
+								<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="${social.path}" fill-rule="evenodd" /></svg>
+							</a>
+						[/#if]
+					[/#list]
+				</div>
+			</div>
+
+			[#if columns gt 0]
+				[#list 1..columns as i]
+					[#assign
+						column = columnDefaults[i - 1]!{}
+						defaultLinks = column.links![]
+						linkCount = configuration["column" + i + "Links"]?number
+					/]
+
+					<div class="vt-footer__column">
+						<h2 class="vt-footer__heading">
+							<a data-lfr-editable-id="column-${i}" data-lfr-editable-type="link" href="${column.href!'#'}">${column.label!"Coluna ${i}"}</a>
+						</h2>
+
+						[#if linkCount gt 0]
+							<ul class="vt-footer__links">
+								[#list 1..linkCount as j]
+									[#assign link = (j lte defaultLinks?size)?then(defaultLinks[j - 1], ["Link ${j}", "#"]) /]
+
+									<li>
+										<a class="vt-footer__link" data-lfr-editable-id="column-${i}-${j}" data-lfr-editable-type="link" href="${link[1]}">${link[0]}</a>
+									</li>
+								[/#list]
+							</ul>
+						[/#if]
+					</div>
+				[/#list]
+			[/#if]
+		</div>
+
+		<div class="vt-footer__bottom">
+			<p>
+				&copy; ${.now?string("yyyy")} <span data-lfr-editable-id="copyright" data-lfr-editable-type="text">Vintra. Todos os direitos reservados.</span>
+			</p>
+
+			[#if bottomLinks gt 0]
+				<div class="vt-footer__bottom-links">
+					[#list 1..bottomLinks as i]
+						[#assign link = (i lte bottomDefaults?size)?then(bottomDefaults[i - 1], ["Link ${i}", "#"]) /]
+
+						<a class="vt-footer__bottom-link" data-lfr-editable-id="bottom-${i}" data-lfr-editable-type="link" href="${link[1]}">${link[0]}</a>
+					[/#list]
+				</div>
+			[/#if]
+		</div>
+	</div>
+</footer>

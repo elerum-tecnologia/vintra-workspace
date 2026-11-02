@@ -1,0 +1,11 @@
+{
+  "friendlyURL": "/inicio",
+  "hidden": false,
+  "name": "Início",
+  "name_i18n": {
+    "pt_BR": "Início"
+  },
+  "private": false,
+  "system": false,
+  "type": "Content"
+}

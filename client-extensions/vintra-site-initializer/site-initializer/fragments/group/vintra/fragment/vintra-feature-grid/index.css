@@ -1,0 +1,61 @@
+/* Vintra - Grade de recursos */
+.vt .vt-features__grid {
+	display: grid;
+	gap: 1.5rem;
+	margin-top: 3.5rem;
+}
+
+@media (min-width: 640px) {
+	.vt .vt-features__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 1024px) {
+	.vt .vt-features__grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+.vt .vt-features__card {
+	background-color: var(--vt-card);
+	border: 1px solid var(--vt-border);
+	border-radius: var(--vt-radius-2xl);
+	padding: 1.75rem;
+	transition: box-shadow 150ms;
+}
+
+.vt .vt-features__card:hover {
+	box-shadow: var(--vt-shadow-md);
+}
+
+.vt .vt-features__icon {
+	align-items: center;
+	border-radius: var(--vt-radius-xl);
+	box-shadow: var(--vt-shadow-sm);
+	color: #ffffff;
+	display: inline-flex;
+	height: 3rem;
+	justify-content: center;
+	width: 3rem;
+}
+
+.vt .vt-features__icon .vt-icon {
+	height: 1.5rem;
+	width: 1.5rem;
+}
+
+.vt .vt-features__title {
+	color: var(--vt-card-foreground);
+	font-size: 1.125rem;
+	font-weight: 600;
+	line-height: 1.75rem;
+	margin-top: 1.25rem;
+}
+
+.vt .vt-features__description {
+	color: var(--vt-muted-foreground);
+	line-height: 1.625;
+	margin-top: 0.5rem;
+	text-wrap: pretty;
+}

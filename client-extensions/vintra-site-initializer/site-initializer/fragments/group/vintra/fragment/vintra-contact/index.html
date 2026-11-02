@@ -1,0 +1,105 @@
+[#function vtBool value default]
+	[#if value?is_boolean]
+		[#return value]
+	[/#if]
+	[#if value?is_string]
+		[#if value == ""]
+			[#return default]
+		[/#if]
+		[#return value == "true"]
+	[/#if]
+	[#return default]
+[/#function]
+
+[#--
+  Vintra - Contato
+  Coluna de informações (e-mail, telefone, endereço — editáveis) e
+  formulário. Sem endpoint configurado, o envio só exibe a mensagem de
+  sucesso (igual ao site original). Com endpoint, envia JSON via fetch.
+  No editor, a mensagem de sucesso aparece abaixo do formulário para edição.
+--]
+[#assign
+	ns = fragmentEntryLinkNamespace
+	isEditMode = layoutMode == "edit"
+/]
+
+<section class="vt vt-section vt-contact" data-vt-contact>
+	<div class="container vt-container vt-contact__grid">
+		<div>
+			[#if vtBool(configuration.showEyebrow!"", false)]
+				<span class="vt-eyebrow" data-lfr-editable-id="eyebrow" data-lfr-editable-type="text">Contato</span>
+			[/#if]
+
+			<h2 class="vt-h2 vt-contact__title" data-lfr-editable-id="title" data-lfr-editable-type="text">Vamos conversar</h2>
+
+			[#if vtBool(configuration.showDescription!"", true)]
+				<p class="vt-lead vt-contact__description" data-lfr-editable-id="description" data-lfr-editable-type="text">Conte sobre sua operação e mostraremos como a Vintra se encaixa no seu processo, sem compromisso.</p>
+			[/#if]
+
+			<ul class="vt-contact__details">
+				<li class="vt-contact__detail">
+					<span aria-hidden="true" class="vt-contact__icon"><svg class="vt-icon"><use href="#vt-i-mail" /></svg></span>
+					<div>
+						<p class="vt-contact__label" data-lfr-editable-id="email-label" data-lfr-editable-type="text">E-mail</p>
+						<a class="vt-contact__value" data-lfr-editable-id="email" data-lfr-editable-type="link" href="mailto:contato@vintra.com.br">contato@vintra.com.br</a>
+					</div>
+				</li>
+				<li class="vt-contact__detail">
+					<span aria-hidden="true" class="vt-contact__icon"><svg class="vt-icon"><use href="#vt-i-phone" /></svg></span>
+					<div>
+						<p class="vt-contact__label" data-lfr-editable-id="phone-label" data-lfr-editable-type="text">Telefone</p>
+						<a class="vt-contact__value" data-lfr-editable-id="phone" data-lfr-editable-type="link" href="tel:1140002020">(11) 4000-2020</a>
+					</div>
+				</li>
+				<li class="vt-contact__detail">
+					<span aria-hidden="true" class="vt-contact__icon"><svg class="vt-icon"><use href="#vt-i-map-pin" /></svg></span>
+					<div>
+						<p class="vt-contact__label" data-lfr-editable-id="address-label" data-lfr-editable-type="text">Endereço</p>
+						<p class="vt-contact__value" data-lfr-editable-id="address" data-lfr-editable-type="text">Av. Paulista, 1200 — São Paulo, SP</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="vt-contact__card">
+			<form class="vt-contact__form" data-endpoint="${configuration.endpoint!""}" data-layout-mode="${layoutMode}" novalidate>
+				<div class="vt-field">
+					<label class="vt-label" for="${ns}-name" data-lfr-editable-id="label-name" data-lfr-editable-type="text">Nome</label>
+					<input autocomplete="name" class="vt-input" id="${ns}-name" name="${configuration.fieldName!"nome"}" placeholder="${configuration.placeholderName!"Seu nome"}" required type="text" />
+				</div>
+
+				<div class="vt-field">
+					<label class="vt-label" for="${ns}-email" data-lfr-editable-id="label-email" data-lfr-editable-type="text">E-mail</label>
+					<input autocomplete="email" class="vt-input" id="${ns}-email" name="${configuration.fieldEmail!"email"}" placeholder="${configuration.placeholderEmail!"voce@empresa.com.br"}" required type="email" />
+				</div>
+
+				<div class="vt-field">
+					<label class="vt-label" for="${ns}-message" data-lfr-editable-id="label-message" data-lfr-editable-type="text">Mensagem</label>
+					<textarea class="vt-input" id="${ns}-message" name="${configuration.fieldMessage!"mensagem"}" placeholder="${configuration.placeholderMessage!"Como podemos ajudar?"}" required rows="5"></textarea>
+				</div>
+
+				<button class="vt-btn vt-btn--primary vt-btn--lg vt-btn--block vt-contact__submit" type="${isEditMode?then("button", "submit")}">
+					<span data-lfr-editable-id="submit" data-lfr-editable-type="text">Enviar</span>
+				</button>
+
+				<p class="vt-form-error" data-lfr-editable-id="error" data-lfr-editable-type="text" [#if !isEditMode]hidden[/#if]>Não foi possível enviar agora. Tente novamente em instantes.</p>
+			</form>
+
+			<div class="vt-contact__success" [#if !isEditMode]hidden[/#if]>
+				[#if isEditMode]
+					<span class="vt-editor-label">Mensagem de sucesso (visível após o envio)</span>
+				[/#if]
+
+				<span class="vt-success-badge"><svg aria-hidden="true" class="vt-icon"><use href="#vt-i-check" /></svg></span>
+
+				<h3 class="vt-contact__success-title" data-lfr-editable-id="success-title" data-lfr-editable-type="text">Mensagem enviada!</h3>
+
+				<p class="vt-contact__success-text" data-lfr-editable-id="success-text" data-lfr-editable-type="text">Obrigado pelo contato. Nosso time responderá em até um dia útil.</p>
+
+				<button class="vt-btn vt-btn--outline vt-contact__again" type="button">
+					<span data-lfr-editable-id="again" data-lfr-editable-type="text">Enviar outra mensagem</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</section>

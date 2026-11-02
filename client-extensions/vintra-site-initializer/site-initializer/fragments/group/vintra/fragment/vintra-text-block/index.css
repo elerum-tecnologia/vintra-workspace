@@ -1,0 +1,88 @@
+/* Vintra - Bloco de texto */
+.vt.vt-textblock--md {
+	padding: 4rem 0;
+}
+
+.vt.vt-textblock--lg {
+	padding: 4rem 0;
+}
+
+@media (min-width: 640px) {
+	.vt.vt-textblock--md {
+		padding: 5rem 0;
+	}
+
+	.vt.vt-textblock--lg {
+		padding: 6rem 0;
+	}
+}
+
+.vt .vt-textblock__inner--split {
+	align-items: center;
+	display: grid;
+	gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+	.vt .vt-textblock__inner--split {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.vt .vt-textblock__inner--image-left .vt-textblock__content {
+		order: 2;
+	}
+
+	.vt .vt-textblock__inner--image-left .vt-textblock__media {
+		order: 1;
+	}
+}
+
+.vt .vt-textblock__title {
+	margin-top: 0.5rem;
+}
+
+.vt .vt-textblock__body {
+	color: var(--vt-muted-foreground);
+	font-size: 1.125rem;
+	line-height: 1.625;
+	margin-top: 1.25rem;
+	text-wrap: pretty;
+}
+
+.vt .vt-textblock__body > * + * {
+	margin-top: 1rem;
+}
+
+.vt .vt-textblock__body ul {
+	list-style: disc;
+	padding-left: 1.5rem;
+}
+
+.vt .vt-textblock__body ol {
+	list-style: decimal;
+	padding-left: 1.5rem;
+}
+
+.vt .vt-textblock__body a {
+	color: var(--vt-primary);
+	text-decoration: underline;
+	text-underline-offset: 4px;
+}
+
+.vt .vt-textblock__body strong {
+	color: var(--vt-foreground);
+	font-weight: 600;
+}
+
+.vt .vt-textblock__media {
+	border: 1px solid var(--vt-border);
+	border-radius: var(--vt-radius-2xl);
+	box-shadow: var(--vt-shadow-lg);
+	overflow: hidden;
+}
+
+.vt .vt-textblock__media img {
+	height: auto;
+	object-fit: cover;
+	width: 100%;
+}

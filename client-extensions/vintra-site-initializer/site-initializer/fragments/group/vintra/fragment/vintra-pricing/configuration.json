@@ -1,0 +1,109 @@
+{
+  "fieldSets": [
+    {
+      "label": "Layout",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "3",
+          "label": "Quantidade de planos",
+          "name": "items",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "2",
+          "label": "Plano em destaque",
+          "name": "highlighted",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Nenhum",
+                "value": "0"
+              },
+              {
+                "label": "Plano 1",
+                "value": "1"
+              },
+              {
+                "label": "Plano 2",
+                "value": "2"
+              },
+              {
+                "label": "Plano 3",
+                "value": "3"
+              },
+              {
+                "label": "Plano 4",
+                "value": "4"
+              }
+            ]
+          }
+        },
+        {
+          "defaultValue": true,
+          "label": "Mostrar selo no plano em destaque",
+          "name": "showBadge",
+          "type": "checkbox"
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "default",
+          "label": "Fundo da seção",
+          "name": "background",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Padrão",
+                "value": "default"
+              },
+              {
+                "label": "Cinza suave",
+                "value": "muted"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "Cabeçalho da seção",
+      "fields": [
+        {
+          "defaultValue": true,
+          "label": "Mostrar eyebrow",
+          "name": "showEyebrow",
+          "type": "checkbox"
+        },
+        {
+          "defaultValue": true,
+          "label": "Mostrar texto de introdução",
+          "name": "showIntro",
+          "type": "checkbox"
+        }
+      ]
+    }
+  ]
+}

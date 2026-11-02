@@ -1,0 +1,81 @@
+[#function vtBool value default]
+	[#if value?is_boolean]
+		[#return value]
+	[/#if]
+	[#if value?is_string]
+		[#if value == ""]
+			[#return default]
+		[/#if]
+		[#return value == "true"]
+	[/#if]
+	[#return default]
+[/#function]
+
+[#--
+  Vintra - Planos e preços
+  Nome, preço, período, descrição, lista de itens (texto rico — use lista
+  com marcadores) e botão editáveis. O plano em destaque recebe borda,
+  sombra, selo e botão principal.
+--]
+[#assign
+	defaults = [
+		{"name": "Essencial", "price": "R$ 490", "period": "/mês", "description": "Para times pequenos que estão organizando os primeiros processos.", "features": ["Até 10 usuários", "Integrações básicas", "Suporte por e-mail"], "cta": ["Começar agora", "/criar-conta"]},
+		{"name": "Profissional", "price": "R$ 1.290", "period": "/mês", "description": "Para operações em crescimento que precisam de automação.", "features": ["Até 50 usuários", "Todas as integrações", "Automações ilimitadas", "Suporte prioritário"], "cta": ["Começar agora", "/criar-conta"]},
+		{"name": "Empresarial", "price": "Sob consulta", "period": "", "description": "Para operações complexas, com necessidades específicas de segurança e escala.", "features": ["Usuários ilimitados", "Implantação dedicada", "Gerente de conta exclusivo", "SLA personalizado"], "cta": ["Falar com vendas", "/contato"]},
+		{"name": "Personalizado", "price": "Sob consulta", "period": "", "description": "Descreva para quem este plano é indicado.", "features": ["Item incluído no plano", "Outro item incluído"], "cta": ["Falar com vendas", "/contato"]}
+	]
+	items = configuration.items?number
+	highlighted = configuration.highlighted?number
+/]
+
+<section class="vt vt-section vt-pricing vt-bg--${configuration.background!"default"}">
+	<div class="container vt-container">
+		<div class="vt-section-head">
+			[#if vtBool(configuration.showEyebrow!"", true)]
+				<span class="vt-eyebrow" data-lfr-editable-id="eyebrow" data-lfr-editable-type="text">Planos</span>
+			[/#if]
+
+			<h2 class="vt-h2" data-lfr-editable-id="title" data-lfr-editable-type="text">Escolha o plano ideal para o seu time</h2>
+
+			[#if vtBool(configuration.showIntro!"", true)]
+				<p class="vt-lead" data-lfr-editable-id="intro" data-lfr-editable-type="text">Todos os planos incluem integrações, automações e suporte. Você paga apenas pelo que a sua operação precisa.</p>
+			[/#if]
+		</div>
+
+		<div class="vt-pricing__grid vt-pricing__grid--cols-${items}" style="--vt-pricing-cols: ${items};">
+			[#list 1..items as i]
+				[#assign
+					plan = defaults[i - 1]
+					isHighlighted = i == highlighted
+				/]
+
+				<div class="vt-plan[#if isHighlighted] vt-plan--highlighted[/#if]">
+					[#if isHighlighted && (vtBool(configuration.showBadge!"", true))]
+						<span class="vt-plan__badge vt-gradient" data-lfr-editable-id="plan-${i}-badge" data-lfr-editable-type="text">Mais popular</span>
+					[/#if]
+
+					<h3 class="vt-plan__name" data-lfr-editable-id="plan-${i}-name" data-lfr-editable-type="text">${plan.name}</h3>
+
+					<div class="vt-plan__price-row">
+						<span class="vt-plan__price" data-lfr-editable-id="plan-${i}-price" data-lfr-editable-type="text">${plan.price}</span>
+						<span class="vt-plan__period" data-lfr-editable-id="plan-${i}-period" data-lfr-editable-type="text">${plan.period}</span>
+					</div>
+
+					<p class="vt-plan__description" data-lfr-editable-id="plan-${i}-description" data-lfr-editable-type="text">${plan.description}</p>
+
+					<div class="vt-plan__features" data-lfr-editable-id="plan-${i}-features" data-lfr-editable-type="rich-text">
+						<ul>
+							[#list plan.features as feature]
+								<li>${feature}</li>
+							[/#list]
+						</ul>
+					</div>
+
+					<div class="vt-plan__action">
+						<a class="vt-btn vt-btn--block ${isHighlighted?then('vt-btn--primary', 'vt-btn--outline')}" data-lfr-editable-id="plan-${i}-button" data-lfr-editable-type="link" href="${plan.cta[1]}">${plan.cta[0]}</a>
+					</div>
+				</div>
+			[/#list]
+		</div>
+	</div>
+</section>

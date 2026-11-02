@@ -1,0 +1,30 @@
+[
+  {
+    "externalReferenceCode": "VINTRA-MENU-PRINCIPAL",
+    "name": "Menu principal",
+    "menuItems": [
+      {"type": "layout", "friendlyURL": "/inicio", "privateLayout": false},
+      {"type": "layout", "friendlyURL": "/produtos", "privateLayout": false, "menuItems": [
+        {"type": "layout", "friendlyURL": "/produtos/plataforma", "privateLayout": false},
+        {"type": "layout", "friendlyURL": "/produtos/integracoes", "privateLayout": false},
+        {"type": "layout", "friendlyURL": "/produtos/precos", "privateLayout": false}
+      ]},
+      {"type": "layout", "friendlyURL": "/solucoes", "privateLayout": false, "menuItems": [
+        {"type": "layout", "friendlyURL": "/solucoes/varejo", "privateLayout": false},
+        {"type": "layout", "friendlyURL": "/solucoes/industria", "privateLayout": false},
+        {"type": "layout", "friendlyURL": "/solucoes/servicos-financeiros", "privateLayout": false}
+      ]},
+      {"type": "layout", "friendlyURL": "/sobre", "privateLayout": false, "menuItems": [
+        {"type": "layout", "friendlyURL": "/sobre/historia", "privateLayout": false},
+        {"type": "layout", "friendlyURL": "/sobre/equipe", "privateLayout": false},
+        {"type": "layout", "friendlyURL": "/sobre/carreiras", "privateLayout": false}
+      ]},
+      {"type": "layout", "friendlyURL": "/recursos", "privateLayout": false, "menuItems": [
+        {"type": "layout", "friendlyURL": "/recursos/blog", "privateLayout": false},
+        {"type": "layout", "friendlyURL": "/recursos/ajuda", "privateLayout": false},
+        {"type": "layout", "friendlyURL": "/recursos/documentacao", "privateLayout": false}
+      ]},
+      {"type": "layout", "friendlyURL": "/contato", "privateLayout": false}
+    ]
+  }
+]

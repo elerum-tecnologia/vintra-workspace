@@ -1,0 +1,61 @@
+[#function vtBool value default]
+	[#if value?is_boolean]
+		[#return value]
+	[/#if]
+	[#if value?is_string]
+		[#if value == ""]
+			[#return default]
+		[/#if]
+		[#return value == "true"]
+	[/#if]
+	[#return default]
+[/#function]
+
+[#--
+  Vintra - Grade de recursos
+  Quantidade de cards e ícone de cada card ficam em Configuração.
+  Títulos e descrições são editáveis.
+--]
+[#assign
+	defaults = [
+		["Integrações prontas", "Conecte-se a ERPs, CRMs e sistemas legados sem escrever uma linha de código."],
+		["Automação de processos", "Elimine tarefas manuais repetitivas com fluxos configuráveis pela própria equipe de negócio."],
+		["Segurança de nível empresarial", "Criptografia de ponta a ponta, controle de acesso granular e trilhas de auditoria completas."],
+		["Orquestração de processos", "Modele fluxos ponta a ponta com etapas condicionais, aprovações e SLAs monitorados automaticamente."],
+		["Planos e cobrança", "Entenda os planos, altere sua assinatura e acesse notas fiscais e faturas."],
+		["Conta e usuários", "Adicione e remova pessoas, configure grupos e defina políticas de acesso da sua empresa."]
+	]
+	items = configuration.items?number
+/]
+
+<section class="vt vt-section vt-features vt-bg--${configuration.background!"muted"}">
+	<div class="container vt-container">
+		<div class="vt-section-head">
+			[#if vtBool(configuration.showEyebrow!"", true)]
+				<span class="vt-eyebrow" data-lfr-editable-id="eyebrow" data-lfr-editable-type="text">Recursos</span>
+			[/#if]
+
+			<h2 class="vt-h2" data-lfr-editable-id="title" data-lfr-editable-type="text">Tudo que sua operação precisa, em um só lugar</h2>
+
+			[#if vtBool(configuration.showIntro!"", false)]
+				<p class="vt-lead" data-lfr-editable-id="intro" data-lfr-editable-type="text">Uma base única para integrar sistemas, automatizar processos e operar com segurança.</p>
+			[/#if]
+		</div>
+
+		<div class="vt-features__grid">
+			[#list 1..items as i]
+				[#assign item = (i lte defaults?size)?then(defaults[i - 1], ["Novo recurso", "Descreva em uma ou duas frases o benefício deste recurso."]) /]
+
+				<div class="vt-features__card">
+					<span aria-hidden="true" class="vt-features__icon vt-gradient">
+						<svg class="vt-icon"><use href="#vt-i-${configuration['icon' + i]}" /></svg>
+					</span>
+
+					<h3 class="vt-features__title" data-lfr-editable-id="item-${i}-title" data-lfr-editable-type="text">${item[0]}</h3>
+
+					<p class="vt-features__description" data-lfr-editable-id="item-${i}-description" data-lfr-editable-type="text">${item[1]}</p>
+				</div>
+			[/#list]
+		</div>
+	</div>
+</section>

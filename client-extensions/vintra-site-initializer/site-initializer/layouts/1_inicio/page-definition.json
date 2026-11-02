@@ -1,0 +1,62 @@
+{
+  "pageElement": {
+    "pageElements": [
+      {
+        "type": "Fragment",
+        "definition": {
+          "fragment": {
+            "key": "vintra-hero"
+          },
+          "fragmentConfig": {},
+          "fragmentFields": []
+        }
+      },
+      {
+        "type": "Fragment",
+        "definition": {
+          "fragment": {
+            "key": "vintra-feature-grid"
+          },
+          "fragmentConfig": {},
+          "fragmentFields": []
+        }
+      },
+      {
+        "type": "Fragment",
+        "definition": {
+          "fragment": {
+            "key": "vintra-text-block"
+          },
+          "fragmentConfig": {},
+          "fragmentFields": []
+        }
+      },
+      {
+        "type": "Fragment",
+        "definition": {
+          "fragment": {
+            "key": "vintra-blog-list"
+          },
+          "fragmentConfig": {},
+          "fragmentFields": []
+        }
+      },
+      {
+        "type": "Fragment",
+        "definition": {
+          "fragment": {
+            "key": "vintra-cta"
+          },
+          "fragmentConfig": {},
+          "fragmentFields": []
+        }
+      }
+    ],
+    "type": "Root"
+  },
+  "settings": {
+    "masterPage": {
+      "key": "vintra"
+    }
+  }
+}

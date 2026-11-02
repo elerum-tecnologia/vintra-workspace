@@ -1,0 +1,11 @@
+{
+  "friendlyURL": "/solucoes/industria",
+  "hidden": false,
+  "name": "Indústria",
+  "name_i18n": {
+    "pt_BR": "Indústria"
+  },
+  "private": false,
+  "system": false,
+  "type": "Content"
+}

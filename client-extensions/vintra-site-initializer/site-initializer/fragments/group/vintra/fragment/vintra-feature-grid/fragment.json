@@ -1,0 +1,9 @@
+{
+	"configurationPath": "configuration.json",
+	"cssPath": "index.css",
+	"htmlPath": "index.html",
+	"icon": "cards2",
+	"jsPath": "index.js",
+	"name": "Vintra - Grade de recursos",
+	"type": "component"
+}

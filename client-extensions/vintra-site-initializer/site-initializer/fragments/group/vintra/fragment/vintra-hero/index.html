@@ -1,0 +1,51 @@
+[#--
+  Vintra - Hero
+  "Grande": título + imagem lado a lado (página inicial).
+  "Compacto": centralizado, sem imagem (cabeçalho das subpáginas).
+--]
+[#assign
+	heroSize = configuration.size!"lg"
+	isLarge = heroSize == "lg"
+	showImage = configuration.showImage!true
+	showEyebrow = configuration.showEyebrow!true
+	showDescription = configuration.showDescription!true
+	showPrimary = configuration.showPrimary!true
+	showSecondary = configuration.showSecondary!true
+	hasImage = isLarge && showImage
+/]
+
+<section class="vt vt-hero vt-hero--${heroSize}">
+	<div aria-hidden="true" class="vt-glow"></div>
+
+	<div class="container vt-container vt-hero__inner ${hasImage?then('vt-hero__inner--split', 'vt-hero__inner--center')}">
+		<div class="vt-hero__content">
+			[#if showEyebrow]
+				<span class="vt-hero__eyebrow" data-lfr-editable-id="eyebrow" data-lfr-editable-type="text">Plataforma digital para empresas</span>
+			[/#if]
+
+			<h1 class="vt-hero__title" data-lfr-editable-id="title" data-lfr-editable-type="text">Sua operação digital, unificada em um só lugar</h1>
+
+			[#if showDescription]
+				<p class="vt-hero__description" data-lfr-editable-id="description" data-lfr-editable-type="text">A Vintra conecta pessoas, processos e sistemas numa única plataforma — para equipes que precisam de mais velocidade e menos retrabalho.</p>
+			[/#if]
+
+			[#if showPrimary || showSecondary]
+				<div class="vt-hero__actions">
+					[#if showPrimary]
+						<a class="vt-btn vt-btn--primary vt-btn--lg" data-lfr-editable-id="primary" data-lfr-editable-type="link" href="/contato">Fale com um especialista</a>
+					[/#if]
+
+					[#if showSecondary]
+						<a class="vt-btn vt-btn--outline vt-btn--lg" data-lfr-editable-id="secondary" data-lfr-editable-type="link" href="/produtos/precos">Ver planos</a>
+					[/#if]
+				</div>
+			[/#if]
+		</div>
+
+		[#if hasImage]
+			<div class="vt-hero__media">
+				<img alt="Painel da plataforma Vintra com integrações e automações" data-lfr-editable-id="image" data-lfr-editable-type="image" height="560" src="[resources:hero-dashboard.jpg]" width="720" />
+			</div>
+		[/#if]
+	</div>
+</section>

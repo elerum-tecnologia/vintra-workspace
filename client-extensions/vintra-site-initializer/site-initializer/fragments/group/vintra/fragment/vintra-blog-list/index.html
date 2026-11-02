@@ -1,0 +1,65 @@
+[#function vtBool value default]
+	[#if value?is_boolean]
+		[#return value]
+	[/#if]
+	[#if value?is_string]
+		[#if value == ""]
+			[#return default]
+		[/#if]
+		[#return value == "true"]
+	[/#if]
+	[#return default]
+[/#function]
+
+[#--
+  Vintra - Lista de artigos (conteúdo manual)
+  Cada card tem imagem, categoria, título, resumo e link editáveis.
+  Para listar artigos automaticamente (Blogs/Conteúdo Web), use o
+  fragmento "Exibição de coleção" com o fragmento "Vintra - Card de artigo".
+--]
+[#assign
+	defaults = [
+		{"image": "[resources:blog-automation.jpg]", "alt": "Ilustração de automação de processos", "category": "Produtividade", "title": "5 sinais de que sua operação precisa de automação", "excerpt": "Retrabalho, planilhas paralelas e prazos estourados: reconheça os sintomas antes que virem gargalo.", "href": "/recursos/blog/sinais-de-que-sua-operacao-precisa-de-automacao"},
+		{"image": "[resources:blog-integrations.jpg]", "alt": "Ilustração de integrações entre sistemas", "category": "Integrações", "title": "Como reduzir retrabalho entre times com integrações", "excerpt": "Quando os sistemas conversam, os times param de digitar o mesmo dado duas vezes. Veja por onde começar.", "href": "/recursos/blog/como-reduzir-retrabalho-entre-times-com-integracoes"},
+		{"image": "[resources:blog-security.jpg]", "alt": "Ilustração de segurança de dados", "category": "Segurança", "title": "Segurança de dados: o que toda empresa deveria revisar em 2026", "excerpt": "Controle de acesso, auditoria e criptografia: um checklist prático para proteger a operação digital.", "href": "/recursos/blog/seguranca-de-dados-o-que-revisar-em-2026"}
+	]
+	items = configuration.items?number
+/]
+
+<section class="vt vt-section vt-blog vt-bg--${configuration.background!"muted"}">
+	<div class="container vt-container">
+		<div class="vt-section-head">
+			[#if vtBool(configuration.showEyebrow!"", true)]
+				<span class="vt-eyebrow" data-lfr-editable-id="eyebrow" data-lfr-editable-type="text">Do blog</span>
+			[/#if]
+
+			<h2 class="vt-h2" data-lfr-editable-id="title" data-lfr-editable-type="text">Ideias para operações mais inteligentes</h2>
+
+			[#if vtBool(configuration.showIntro!"", false)]
+				<p class="vt-lead" data-lfr-editable-id="intro" data-lfr-editable-type="text">Automação, integrações e segurança explicadas de forma prática.</p>
+			[/#if]
+		</div>
+
+		<div class="vt-blog__grid">
+			[#list 1..items as i]
+				[#assign post = defaults[(i - 1) % defaults?size] /]
+
+				<article class="vt-post">
+					<div class="vt-post__media">
+						<img alt="${post.alt}" data-lfr-editable-id="post-${i}-image" data-lfr-editable-type="image" src="${post.image}" />
+					</div>
+
+					<div class="vt-post__body">
+						<span class="vt-eyebrow" data-lfr-editable-id="post-${i}-category" data-lfr-editable-type="text">${post.category}</span>
+
+						<h3 class="vt-post__title" data-lfr-editable-id="post-${i}-title" data-lfr-editable-type="text">${post.title}</h3>
+
+						<p class="vt-post__excerpt" data-lfr-editable-id="post-${i}-excerpt" data-lfr-editable-type="text">${post.excerpt}</p>
+
+						<a class="vt-arrow-link vt-post__link" data-lfr-editable-id="post-${i}-link" data-lfr-editable-type="link" href="${post.href}">Ler artigo</a>
+					</div>
+				</article>
+			[/#list]
+		</div>
+	</div>
+</section>

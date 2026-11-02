@@ -1,0 +1,69 @@
+/* Vintra - Chamada para ação */
+.vt.vt-cta {
+	padding: 4rem 0;
+}
+
+@media (min-width: 640px) {
+	.vt.vt-cta {
+		padding: 5rem 0;
+	}
+}
+
+.vt .vt-cta__card {
+	border-radius: var(--vt-radius-3xl);
+	overflow: hidden;
+	padding: 3.5rem 1.5rem;
+	position: relative;
+	text-align: center;
+}
+
+@media (min-width: 640px) {
+	.vt .vt-cta__card {
+		padding: 4rem 3rem;
+	}
+}
+
+.vt .vt-cta__shine {
+	background-image: radial-gradient(circle at 20% 20%, white 0, transparent 35%), radial-gradient(circle at 80% 80%, white 0, transparent 35%);
+	inset: 0;
+	opacity: 0.2;
+	pointer-events: none;
+	position: absolute;
+}
+
+.vt .vt-cta__content {
+	margin: 0 auto;
+	max-width: 42rem;
+	position: relative;
+}
+
+.vt .vt-cta__title {
+	color: #ffffff;
+	font-family: var(--vt-font-display);
+	font-size: 1.875rem;
+	font-weight: 700;
+	letter-spacing: -0.025em;
+	line-height: 2.25rem;
+	text-wrap: balance;
+}
+
+@media (min-width: 640px) {
+	.vt .vt-cta__title {
+		font-size: 2.25rem;
+		line-height: 2.5rem;
+	}
+}
+
+.vt .vt-cta__description {
+	color: rgb(255 255 255 / 0.9);
+	font-size: 1.125rem;
+	line-height: 1.625;
+	margin-top: 1rem;
+	text-wrap: pretty;
+}
+
+.vt .vt-cta__actions {
+	display: flex;
+	justify-content: center;
+	margin-top: 2rem;
+}

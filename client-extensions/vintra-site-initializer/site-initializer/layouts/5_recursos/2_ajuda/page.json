@@ -1,0 +1,11 @@
+{
+  "friendlyURL": "/recursos/ajuda",
+  "hidden": false,
+  "name": "Central de ajuda",
+  "name_i18n": {
+    "pt_BR": "Central de ajuda"
+  },
+  "private": false,
+  "system": false,
+  "type": "Content"
+}

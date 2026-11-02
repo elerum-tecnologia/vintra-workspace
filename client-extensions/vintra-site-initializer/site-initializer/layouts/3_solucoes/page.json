@@ -1,0 +1,11 @@
+{
+  "friendlyURL": "/solucoes",
+  "hidden": false,
+  "name": "Soluções",
+  "name_i18n": {
+    "pt_BR": "Soluções"
+  },
+  "private": false,
+  "system": false,
+  "type": "Content"
+}

@@ -1,0 +1,11 @@
+{
+  "friendlyURL": "/sobre",
+  "hidden": false,
+  "name": "Sobre",
+  "name_i18n": {
+    "pt_BR": "Sobre"
+  },
+  "private": false,
+  "system": false,
+  "type": "Content"
+}

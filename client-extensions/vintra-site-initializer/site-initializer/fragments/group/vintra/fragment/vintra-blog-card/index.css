@@ -1,0 +1,67 @@
+/* Vintra - Card de artigo
+   Os estilos .vt-post ficam repetidos aqui para o card funcionar mesmo
+   quando a "Lista de artigos" não está na página. */
+.vt.vt-blog-card {
+	height: 100%;
+}
+
+.vt .vt-post {
+	background-color: var(--vt-card);
+	border: 1px solid var(--vt-border);
+	border-radius: var(--vt-radius-2xl);
+	box-shadow: var(--vt-shadow-sm);
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow: hidden;
+	transition: box-shadow 150ms;
+}
+
+.vt .vt-post:hover {
+	box-shadow: var(--vt-shadow-md);
+}
+
+.vt .vt-post__media {
+	aspect-ratio: 16 / 10;
+	overflow: hidden;
+	position: relative;
+}
+
+.vt .vt-post__media img {
+	height: 100%;
+	object-fit: cover;
+	transition: transform 300ms;
+	width: 100%;
+}
+
+.vt .vt-post:hover .vt-post__media img {
+	transform: scale(1.05);
+}
+
+.vt .vt-post__body {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	padding: 1.5rem;
+}
+
+.vt .vt-post__title {
+	color: var(--vt-card-foreground);
+	font-size: 1.125rem;
+	font-weight: 600;
+	line-height: 1.375;
+	margin-top: 0.75rem;
+}
+
+.vt .vt-post__excerpt {
+	color: var(--vt-muted-foreground);
+	flex: 1;
+	line-height: 1.625;
+	margin-top: 0.5rem;
+	text-wrap: pretty;
+}
+
+.vt .vt-post__link {
+	align-self: flex-start;
+	margin-top: 1.25rem;
+}

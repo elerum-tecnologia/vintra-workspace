@@ -1,0 +1,41 @@
+[#function vtBool value default]
+	[#if value?is_boolean]
+		[#return value]
+	[/#if]
+	[#if value?is_string]
+		[#if value == ""]
+			[#return default]
+		[/#if]
+		[#return value == "true"]
+	[/#if]
+	[#return default]
+[/#function]
+
+[#--
+  Vintra - Card de artigo
+  Card isolado, pensado para o fragmento "Exibição de coleção" (Collection
+  Display): mapeie imagem, categoria, título, resumo e link aos campos do
+  Blog / Conteúdo Web. Também funciona solto na página, com conteúdo manual.
+  Configure a Exibição de coleção com 3 colunas para reproduzir o layout.
+--]
+<div class="vt vt-blog-card">
+	<article class="vt-post">
+		<div class="vt-post__media">
+			<img alt="Ilustração de automação de processos" data-lfr-editable-id="image" data-lfr-editable-type="image" src="[resources:blog-automation.jpg]" />
+		</div>
+
+		<div class="vt-post__body">
+			[#if vtBool(configuration.showCategory!"", true)!true]
+				<span class="vt-eyebrow" data-lfr-editable-id="category" data-lfr-editable-type="text">Produtividade</span>
+			[/#if]
+
+			<h3 class="vt-post__title" data-lfr-editable-id="title" data-lfr-editable-type="text">5 sinais de que sua operação precisa de automação</h3>
+
+			[#if vtBool(configuration.showExcerpt!"", true)!true]
+				<p class="vt-post__excerpt" data-lfr-editable-id="excerpt" data-lfr-editable-type="text">Retrabalho, planilhas paralelas e prazos estourados: reconheça os sintomas antes que virem gargalo.</p>
+			[/#if]
+
+			<a class="vt-arrow-link vt-post__link" data-lfr-editable-id="link" data-lfr-editable-type="link" href="#">Ler artigo</a>
+		</div>
+	</article>
+</div>

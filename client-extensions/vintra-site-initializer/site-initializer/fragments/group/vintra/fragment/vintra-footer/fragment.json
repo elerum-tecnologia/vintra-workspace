@@ -1,0 +1,9 @@
+{
+	"configurationPath": "configuration.json",
+	"cssPath": "index.css",
+	"htmlPath": "index.html",
+	"icon": "square-hole-multi",
+	"jsPath": "index.js",
+	"name": "Vintra - Rodapé",
+	"type": "component"
+}

@@ -1,0 +1,81 @@
+{
+  "fieldSets": [
+    {
+      "label": "Layout",
+      "fields": [
+        {
+          "dataType": "string",
+          "defaultValue": "right",
+          "label": "Imagem",
+          "name": "imagePosition",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "À direita",
+                "value": "right"
+              },
+              {
+                "label": "À esquerda",
+                "value": "left"
+              },
+              {
+                "label": "Sem imagem (texto centralizado em coluna)",
+                "value": "none"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "default",
+          "label": "Fundo da seção",
+          "name": "background",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Padrão",
+                "value": "default"
+              },
+              {
+                "label": "Cinza suave",
+                "value": "muted"
+              }
+            ]
+          }
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "md",
+          "label": "Espaçamento vertical",
+          "name": "padding",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "label": "Padrão",
+                "value": "md"
+              },
+              {
+                "label": "Grande",
+                "value": "lg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "Conteúdo",
+      "fields": [
+        {
+          "defaultValue": true,
+          "label": "Mostrar eyebrow",
+          "name": "showEyebrow",
+          "type": "checkbox"
+        }
+      ]
+    }
+  ]
+}
