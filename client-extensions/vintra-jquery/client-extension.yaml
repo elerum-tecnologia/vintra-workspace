@@ -1,0 +1,7 @@
+assemble:
+  - from: assets
+    into: static
+vintra-jquery:
+  name: Vintra jQuery
+  type: globalJS
+  url: jquery.min.js
