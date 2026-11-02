@@ -1,0 +1,16 @@
+assemble:
+    - fromTask: bootJar
+vintra-hello-oauth-application-user-agent:
+    .serviceAddress: localhost:58081
+    .serviceScheme: http
+    name: Vintra Hello OAuth Application
+    scopes:
+        - Liferay.Headless.Admin.User.everything.read
+    type: oAuthApplicationUserAgent
+vintra-hello-oauth-application-headless-server:
+    .serviceAddress: localhost:58081
+    .serviceScheme: http
+    name: Vintra Hello OAuth Headless Server
+    scopes:
+        - Liferay.Headless.Admin.User.everything.read
+    type: oAuthApplicationHeadlessServer

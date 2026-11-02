@@ -1,0 +1,21 @@
+buildscript {
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.7.18"
+    }
+    repositories {
+        maven { url "https://repository-cdn.liferay.com/nexus/content/groups/public" }
+    }
+}
+
+apply plugin: "java-library"
+apply plugin: "org.springframework.boot"
+
+dependencies {
+    implementation "com.liferay:com.liferay.client.extension.util.spring.boot:latest.release"
+    implementation "org.springframework.boot:spring-boot-starter-oauth2-resource-server:2.7.18"
+    implementation "org.springframework.boot:spring-boot-starter-web:2.7.18"
+}
+
+repositories {
+    maven { url "https://repository-cdn.liferay.com/nexus/content/groups/public" }
+}
